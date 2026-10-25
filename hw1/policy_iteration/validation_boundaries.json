@@ -1,0 +1,111 @@
+{
+  "experiment": "boundaries",
+  "gamma": 0.95,
+  "queue_cap_assumption": "arrivals above 200 are excluded from the queue",
+  "one_step_checks": [
+    {
+      "state": 0,
+      "action": 0,
+      "remaining": 0,
+      "cost": 0
+    },
+    {
+      "state": 0,
+      "action": 1,
+      "remaining": 0,
+      "cost": 100
+    },
+    {
+      "state": 8,
+      "action": 1,
+      "remaining": 0,
+      "cost": 100
+    },
+    {
+      "state": 15,
+      "action": 1,
+      "remaining": 0,
+      "cost": 100
+    },
+    {
+      "state": 16,
+      "action": 1,
+      "remaining": 1,
+      "cost": 102
+    },
+    {
+      "state": 200,
+      "action": 0,
+      "remaining": 200,
+      "cost": 400
+    },
+    {
+      "state": 200,
+      "action": 1,
+      "remaining": 185,
+      "cost": 470
+    }
+  ],
+  "transition_checks": [
+    {
+      "remaining": 198,
+      "expected_next_states": [
+        199,
+        200,
+        200,
+        200,
+        200
+      ],
+      "expected_future_value": 39920.2,
+      "actual_future_value": 39920.2
+    },
+    {
+      "remaining": 199,
+      "expected_next_states": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "expected_future_value": 40000.0,
+      "actual_future_value": 40000.0
+    },
+    {
+      "remaining": 200,
+      "expected_next_states": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "expected_future_value": 40000.0,
+      "actual_future_value": 40000.0
+    }
+  ],
+  "long_run_checks": [
+    {
+      "state": 198,
+      "expected_value": 7995.6199999999935,
+      "actual_value": 7995.6199998106495,
+      "absolute_error": 1.8934406398329884e-07
+    },
+    {
+      "state": 199,
+      "expected_value": 7997.999999999993,
+      "actual_value": 7997.99999981065,
+      "absolute_error": 1.8934315448859707e-07
+    },
+    {
+      "state": 200,
+      "expected_value": 7999.999999999993,
+      "actual_value": 7999.99999981065,
+      "absolute_error": 1.8934315448859707e-07
+    }
+  ],
+  "evaluation_steps": 477,
+  "max_value_error": 1.8934406398329884e-07,
+  "allowed_value_error": 1.9999999999999983e-07,
+  "passed": true
+}

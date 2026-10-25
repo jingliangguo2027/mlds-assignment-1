@@ -1,0 +1,18 @@
+{
+  "mean": -20.32,
+  "paired_episodes": 50,
+  "discounted_gain": 0.4120068295300007,
+  "discounted_gain_95_interval": [
+    0.25883721858263015,
+    0.5596813014745713
+  ],
+  "mean_discounted_return": -1.144074341058731,
+  "paired_score_gain": 0.36,
+  "paired_bootstrap_95_interval": [
+    0.08,
+    0.64
+  ],
+  "clear_gain": false,
+  "mean_entropy_first256": 0.6577247822284699,
+  "mean_saturated_first256": 0.0
+}

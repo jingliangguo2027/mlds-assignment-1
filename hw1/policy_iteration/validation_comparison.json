@@ -1,0 +1,32 @@
+{
+  "experiment": "algorithm_comparison",
+  "states_checked": 201,
+  "cost_tolerance": 0.0001,
+  "finite_horizon": 500,
+  "value_iteration_updates": 340,
+  "policy_iteration_rounds": 6,
+  "comparisons": [
+    {
+      "algorithm_a": "finite_500",
+      "algorithm_b": "value_iteration",
+      "max_cost_difference": 1.8105282833857927e-05,
+      "matching_actions": 201,
+      "different_action_states": []
+    },
+    {
+      "algorithm_a": "finite_500",
+      "algorithm_b": "policy_iteration",
+      "max_cost_difference": 1.840908225858584e-07,
+      "matching_actions": 201,
+      "different_action_states": []
+    },
+    {
+      "algorithm_a": "value_iteration",
+      "algorithm_b": "policy_iteration",
+      "max_cost_difference": 1.792119292076677e-05,
+      "matching_actions": 201,
+      "different_action_states": []
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,3354 @@
+{
+  "config": {
+    "lr": 0.001,
+    "batch_size": 1,
+    "baseline": "none",
+    "gamma": 0.99,
+    "seed": 0,
+    "hidden": 256,
+    "initialization": "default",
+    "omit_time_discount": false,
+    "objective": "-sum(gamma**t * (G_t-b) * log_prob), averaged across batch episodes",
+    "training_env_seeds": "0,1,...",
+    "training_action_seeds": "10000,10001,...",
+    "validation_seeds": "200000..200049",
+    "device_name": "NVIDIA RTX A6000",
+    "torch": "2.14.1+cu126"
+  },
+  "episodes": 300,
+  "model_fingerprint": "e1192861fe1f10b34c2d27b1886c0791d9d1c0e56485c8b9df8ec674d3efa67f",
+  "initial_reference": "tuning_results/initial_validation_h256_default_50.json",
+  "initial_model_fingerprint": "e50038f74e5657e06c7092da0241e05331e747ac35b59cf0453404b03ffb9305",
+  "validation": [
+    {
+      "seed": 200000,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.5782523155212402,
+      "steps": 884,
+      "right_fraction": 0.417420814479638,
+      "entropy_first256": 0.6316945552825928,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200001,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.378849744796753,
+      "steps": 826,
+      "right_fraction": 0.40314769975786924,
+      "entropy_first256": 0.6482134461402893,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200002,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -0.9652059078216553,
+      "steps": 1126,
+      "right_fraction": 0.41207815275310833,
+      "entropy_first256": 0.6401728391647339,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200003,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.1692558526992798,
+      "steps": 884,
+      "right_fraction": 0.4072398190045249,
+      "entropy_first256": 0.6414396166801453,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200004,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.5656530857086182,
+      "steps": 944,
+      "right_fraction": 0.4152542372881356,
+      "entropy_first256": 0.6349275708198547,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200005,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.6718817949295044,
+      "steps": 1125,
+      "right_fraction": 0.42488888888888887,
+      "entropy_first256": 0.6270508170127869,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200006,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.1639846563339233,
+      "steps": 886,
+      "right_fraction": 0.3905191873589165,
+      "entropy_first256": 0.642477810382843,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200007,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.2185053825378418,
+      "steps": 885,
+      "right_fraction": 0.4033898305084746,
+      "entropy_first256": 0.6509509086608887,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200008,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -7.0,
+      "discounted_return": -1.7650327682495117,
+      "steps": 826,
+      "right_fraction": 0.4152542372881356,
+      "entropy_first256": 0.6312995553016663,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200009,
+      "score": -21.0,
+      "first_reward_step": 123,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -0.9789457321166992,
+      "steps": 824,
+      "right_fraction": 0.3883495145631068,
+      "entropy_first256": 0.6458998918533325,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200010,
+      "score": -20.0,
+      "first_reward_step": 63,
+      "points_won": 1,
+      "score_first300": -4.0,
+      "discounted_return": -1.1553407907485962,
+      "steps": 1349,
+      "right_fraction": 0.39288361749444034,
+      "entropy_first256": 0.6437510251998901,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200011,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.4689887762069702,
+      "steps": 950,
+      "right_fraction": 0.4126315789473684,
+      "entropy_first256": 0.6449898481369019,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200012,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.219362735748291,
+      "steps": 824,
+      "right_fraction": 0.4199029126213592,
+      "entropy_first256": 0.6334729194641113,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200013,
+      "score": -20.0,
+      "first_reward_step": 123,
+      "points_won": 1,
+      "score_first300": -6.0,
+      "discounted_return": -0.9733802676200867,
+      "steps": 919,
+      "right_fraction": 0.3862894450489663,
+      "entropy_first256": 0.6420642137527466,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200014,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.205662488937378,
+      "steps": 826,
+      "right_fraction": 0.3934624697336562,
+      "entropy_first256": 0.6470938920974731,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200015,
+      "score": -21.0,
+      "first_reward_step": 123,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -0.9789457321166992,
+      "steps": 824,
+      "right_fraction": 0.4186893203883495,
+      "entropy_first256": 0.6404147148132324,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200016,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.646662950515747,
+      "steps": 826,
+      "right_fraction": 0.40314769975786924,
+      "entropy_first256": 0.634570837020874,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200017,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -3.0,
+      "discounted_return": -1.0361164808273315,
+      "steps": 1068,
+      "right_fraction": 0.3951310861423221,
+      "entropy_first256": 0.6483011245727539,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200018,
+      "score": -20.0,
+      "first_reward_step": 94,
+      "points_won": 1,
+      "score_first300": -1.0,
+      "discounted_return": 0.09929555654525757,
+      "steps": 980,
+      "right_fraction": 0.3989795918367347,
+      "entropy_first256": 0.6494510173797607,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200019,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.219362735748291,
+      "steps": 824,
+      "right_fraction": 0.404126213592233,
+      "entropy_first256": 0.6493338346481323,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200020,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.5074511766433716,
+      "steps": 824,
+      "right_fraction": 0.42475728155339804,
+      "entropy_first256": 0.6414300203323364,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200021,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.2124781608581543,
+      "steps": 825,
+      "right_fraction": 0.38666666666666666,
+      "entropy_first256": 0.6473690271377563,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200022,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.205152153968811,
+      "steps": 887,
+      "right_fraction": 0.4081172491544532,
+      "entropy_first256": 0.6304670572280884,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200023,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.3884835243225098,
+      "steps": 824,
+      "right_fraction": 0.433252427184466,
+      "entropy_first256": 0.6377525329589844,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200024,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.3775248527526855,
+      "steps": 888,
+      "right_fraction": 0.40315315315315314,
+      "entropy_first256": 0.6333479881286621,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200025,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.190639615058899,
+      "steps": 1007,
+      "right_fraction": 0.4031777557100298,
+      "entropy_first256": 0.6425312757492065,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200026,
+      "score": -20.0,
+      "first_reward_step": 63,
+      "points_won": 1,
+      "score_first300": -4.0,
+      "discounted_return": -1.0603519678115845,
+      "steps": 980,
+      "right_fraction": 0.39693877551020407,
+      "entropy_first256": 0.642977237701416,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200027,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.265751600265503,
+      "steps": 946,
+      "right_fraction": 0.4048625792811839,
+      "entropy_first256": 0.6418113708496094,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200028,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.4332823753356934,
+      "steps": 1006,
+      "right_fraction": 0.4125248508946322,
+      "entropy_first256": 0.6371005773544312,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200029,
+      "score": -21.0,
+      "first_reward_step": 123,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -0.667182445526123,
+      "steps": 884,
+      "right_fraction": 0.39592760180995473,
+      "entropy_first256": 0.6398177742958069,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200030,
+      "score": -21.0,
+      "first_reward_step": 125,
+      "points_won": 0,
+      "score_first300": -3.0,
+      "discounted_return": -0.627775251865387,
+      "steps": 1373,
+      "right_fraction": 0.41005098324836126,
+      "entropy_first256": 0.6452736854553223,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200031,
+      "score": -21.0,
+      "first_reward_step": 124,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -0.9691562652587891,
+      "steps": 825,
+      "right_fraction": 0.4072727272727273,
+      "entropy_first256": 0.6347711682319641,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200032,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.0576657056808472,
+      "steps": 948,
+      "right_fraction": 0.41983122362869196,
+      "entropy_first256": 0.6329326629638672,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200033,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.2124781608581543,
+      "steps": 825,
+      "right_fraction": 0.41333333333333333,
+      "entropy_first256": 0.6503443717956543,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200034,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.1110191345214844,
+      "steps": 884,
+      "right_fraction": 0.40384615384615385,
+      "entropy_first256": 0.6398804187774658,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200035,
+      "score": -20.0,
+      "first_reward_step": 63,
+      "points_won": 1,
+      "score_first300": -5.0,
+      "discounted_return": -1.3697699308395386,
+      "steps": 1166,
+      "right_fraction": 0.4125214408233276,
+      "entropy_first256": 0.6374751329421997,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200036,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.0767192840576172,
+      "steps": 950,
+      "right_fraction": 0.41368421052631577,
+      "entropy_first256": 0.6487165689468384,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200037,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.5074511766433716,
+      "steps": 824,
+      "right_fraction": 0.38106796116504854,
+      "entropy_first256": 0.648211658000946,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200038,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.652962565422058,
+      "steps": 948,
+      "right_fraction": 0.41455696202531644,
+      "entropy_first256": 0.6277197003364563,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200039,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -1.065229058265686,
+      "steps": 884,
+      "right_fraction": 0.416289592760181,
+      "entropy_first256": 0.6341368556022644,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200040,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.1292507648468018,
+      "steps": 888,
+      "right_fraction": 0.40878378378378377,
+      "entropy_first256": 0.6403838396072388,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200041,
+      "score": -20.0,
+      "first_reward_step": 63,
+      "points_won": 1,
+      "score_first300": -4.0,
+      "discounted_return": -1.2614802122116089,
+      "steps": 979,
+      "right_fraction": 0.42594484167517876,
+      "entropy_first256": 0.6334033608436584,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200042,
+      "score": -20.0,
+      "first_reward_step": 93,
+      "points_won": 1,
+      "score_first300": -1.0,
+      "discounted_return": 0.05691662058234215,
+      "steps": 1043,
+      "right_fraction": 0.4189837008628955,
+      "entropy_first256": 0.6338082551956177,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200043,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.5099658966064453,
+      "steps": 888,
+      "right_fraction": 0.42567567567567566,
+      "entropy_first256": 0.6357299089431763,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200044,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -5.0,
+      "discounted_return": -1.2037556171417236,
+      "steps": 1008,
+      "right_fraction": 0.40773809523809523,
+      "entropy_first256": 0.6464718580245972,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200045,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -0.9531505107879639,
+      "steps": 1008,
+      "right_fraction": 0.42658730158730157,
+      "entropy_first256": 0.6419327259063721,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200046,
+      "score": -20.0,
+      "first_reward_step": 185,
+      "points_won": 1,
+      "score_first300": -4.0,
+      "discounted_return": -0.5121718049049377,
+      "steps": 981,
+      "right_fraction": 0.4087665647298675,
+      "entropy_first256": 0.6474460363388062,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200047,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -4.0,
+      "discounted_return": -0.9950977563858032,
+      "steps": 948,
+      "right_fraction": 0.4345991561181435,
+      "entropy_first256": 0.6396481990814209,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200048,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.5074511766433716,
+      "steps": 824,
+      "right_fraction": 0.41140776699029125,
+      "entropy_first256": 0.6406347751617432,
+      "saturated_first256": 0.0
+    },
+    {
+      "seed": 200049,
+      "score": -21.0,
+      "first_reward_step": 63,
+      "points_won": 0,
+      "score_first300": -6.0,
+      "discounted_return": -1.691420316696167,
+      "steps": 824,
+      "right_fraction": 0.4186893203883495,
+      "entropy_first256": 0.6403370499610901,
+      "saturated_first256": 0.0
+    }
+  ],
+  "vs_initial": {
+    "mean": -20.84,
+    "paired_episodes": 50,
+    "discounted_gain": 0.2250197034329176,
+    "discounted_gain_95_interval": [
+      0.08532968452759088,
+      0.36830892951786515
+    ],
+    "mean_discounted_return": -1.1785089296847582,
+    "paired_score_gain": -0.32,
+    "paired_bootstrap_95_interval": [
+      -0.56,
+      -0.11950000000000727
+    ],
+    "clear_gain": false,
+    "mean_entropy_first256": 0.6404286706447602,
+    "mean_saturated_first256": 0.0
+  },
+  "vs_previous_block": null,
+  "training_first50": -20.4,
+  "training_last50": -20.74,
+  "start_episode": 0,
+  "new_training_episodes": 300,
+  "previous_checkpoint_episodes": 0,
+  "completed_utc": "2026-10-24T19:38:07.737736+00:00",
+  "updates_last_block": [
+    {
+      "episode": 1,
+      "gradient_norm": 16.8995361328125,
+      "parameter_delta_norm": 0.5436723828315735,
+      "relative_parameter_delta": 0.05861477109538473,
+      "probe_kl": 0.0005380684160627425,
+      "probe_entropy": 0.6924960613250732,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 2,
+      "gradient_norm": 18.28404998779297,
+      "parameter_delta_norm": 0.4116421937942505,
+      "relative_parameter_delta": 0.0443029703462152,
+      "probe_kl": 0.0002332031581318006,
+      "probe_entropy": 0.6919102072715759,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 3,
+      "gradient_norm": 22.653873443603516,
+      "parameter_delta_norm": 0.34357303380966187,
+      "relative_parameter_delta": 0.03686978384767251,
+      "probe_kl": 0.0002324663510080427,
+      "probe_entropy": 0.6908648014068604,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 4,
+      "gradient_norm": 31.697280883789062,
+      "parameter_delta_norm": 0.3116496205329895,
+      "relative_parameter_delta": 0.033331685644035464,
+      "probe_kl": 0.0001449744449928403,
+      "probe_entropy": 0.6904931664466858,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 5,
+      "gradient_norm": 21.132644653320312,
+      "parameter_delta_norm": 0.29605820775032043,
+      "relative_parameter_delta": 0.03155624670081504,
+      "probe_kl": 0.0001225942833116278,
+      "probe_entropy": 0.6904273629188538,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 6,
+      "gradient_norm": 22.941129684448242,
+      "parameter_delta_norm": 0.2757544219493866,
+      "relative_parameter_delta": 0.02928867624157778,
+      "probe_kl": 0.00012125915236538276,
+      "probe_entropy": 0.6898144483566284,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 7,
+      "gradient_norm": 20.847047805786133,
+      "parameter_delta_norm": 0.26097357273101807,
+      "relative_parameter_delta": 0.02761781800863321,
+      "probe_kl": 0.00011496966180857271,
+      "probe_entropy": 0.688300371170044,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 8,
+      "gradient_norm": 26.077041625976562,
+      "parameter_delta_norm": 0.24993017315864563,
+      "relative_parameter_delta": 0.026352337479655357,
+      "probe_kl": 9.029550710693002e-05,
+      "probe_entropy": 0.6872588396072388,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 9,
+      "gradient_norm": 28.85063934326172,
+      "parameter_delta_norm": 0.22830717265605927,
+      "relative_parameter_delta": 0.02398455733287648,
+      "probe_kl": 9.091135143535212e-05,
+      "probe_entropy": 0.6871916055679321,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 10,
+      "gradient_norm": 23.41387176513672,
+      "parameter_delta_norm": 0.21716861426830292,
+      "relative_parameter_delta": 0.022733516905196864,
+      "probe_kl": 8.392333256779239e-05,
+      "probe_entropy": 0.6877515316009521,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 11,
+      "gradient_norm": 17.16437339782715,
+      "parameter_delta_norm": 0.22041131556034088,
+      "relative_parameter_delta": 0.022991791309402314,
+      "probe_kl": 4.537955464911647e-05,
+      "probe_entropy": 0.686225175857544,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 12,
+      "gradient_norm": 5.368006229400635,
+      "parameter_delta_norm": 0.26109758019447327,
+      "relative_parameter_delta": 0.027144627259493806,
+      "probe_kl": 4.104779873159714e-05,
+      "probe_entropy": 0.6860417127609253,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 13,
+      "gradient_norm": 12.576279640197754,
+      "parameter_delta_norm": 0.2748476564884186,
+      "relative_parameter_delta": 0.02847748650030414,
+      "probe_kl": 4.830348916584626e-05,
+      "probe_entropy": 0.686109185218811,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 14,
+      "gradient_norm": 25.606538772583008,
+      "parameter_delta_norm": 0.26966649293899536,
+      "relative_parameter_delta": 0.02783983547897297,
+      "probe_kl": 5.003164187655784e-05,
+      "probe_entropy": 0.6852993965148926,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 15,
+      "gradient_norm": 22.22953224182129,
+      "parameter_delta_norm": 0.2598678469657898,
+      "relative_parameter_delta": 0.026726980459738547,
+      "probe_kl": 5.3488765843212605e-05,
+      "probe_entropy": 0.6830285787582397,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 16,
+      "gradient_norm": 11.972651481628418,
+      "parameter_delta_norm": 0.25936010479927063,
+      "relative_parameter_delta": 0.026570862358095464,
+      "probe_kl": 3.103557901340537e-05,
+      "probe_entropy": 0.685893177986145,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 17,
+      "gradient_norm": 28.93543243408203,
+      "parameter_delta_norm": 0.2550956606864929,
+      "relative_parameter_delta": 0.02603134689234087,
+      "probe_kl": 4.526483826339245e-05,
+      "probe_entropy": 0.6842705011367798,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 18,
+      "gradient_norm": 13.105443000793457,
+      "parameter_delta_norm": 0.25143054127693176,
+      "relative_parameter_delta": 0.025548749090777298,
+      "probe_kl": 4.252589860698208e-05,
+      "probe_entropy": 0.6838023662567139,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 19,
+      "gradient_norm": 26.68123435974121,
+      "parameter_delta_norm": 0.23866114020347595,
+      "relative_parameter_delta": 0.024144999056890035,
+      "probe_kl": 5.176062404643744e-05,
+      "probe_entropy": 0.6823331713676453,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 20,
+      "gradient_norm": 26.71647071838379,
+      "parameter_delta_norm": 0.22860455513000488,
+      "relative_parameter_delta": 0.02302380840781285,
+      "probe_kl": 4.6125773224048316e-05,
+      "probe_entropy": 0.6821849346160889,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 21,
+      "gradient_norm": 33.67855453491211,
+      "parameter_delta_norm": 0.2182868868112564,
+      "relative_parameter_delta": 0.02188446131560678,
+      "probe_kl": 4.7251687647076324e-05,
+      "probe_entropy": 0.6798180937767029,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 22,
+      "gradient_norm": 38.429935455322266,
+      "parameter_delta_norm": 0.2158840298652649,
+      "relative_parameter_delta": 0.021545338035594174,
+      "probe_kl": 8.319847256643698e-05,
+      "probe_entropy": 0.6784498691558838,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 23,
+      "gradient_norm": 10.101140975952148,
+      "parameter_delta_norm": 0.2217261642217636,
+      "relative_parameter_delta": 0.022027977570656086,
+      "probe_kl": 7.733565144008026e-05,
+      "probe_entropy": 0.6790597438812256,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 24,
+      "gradient_norm": 25.032808303833008,
+      "parameter_delta_norm": 0.21399830281734467,
+      "relative_parameter_delta": 0.021166498908959813,
+      "probe_kl": 8.231512765632942e-05,
+      "probe_entropy": 0.6787607669830322,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 25,
+      "gradient_norm": 23.447500228881836,
+      "parameter_delta_norm": 0.2131487876176834,
+      "relative_parameter_delta": 0.020990521145135065,
+      "probe_kl": 5.7102406572084874e-05,
+      "probe_entropy": 0.6778140068054199,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 26,
+      "gradient_norm": 7.1485419273376465,
+      "parameter_delta_norm": 0.20928284525871277,
+      "relative_parameter_delta": 0.02052310538909634,
+      "probe_kl": 4.2396575736347586e-05,
+      "probe_entropy": 0.6764187812805176,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 27,
+      "gradient_norm": 24.209331512451172,
+      "parameter_delta_norm": 0.20678216218948364,
+      "relative_parameter_delta": 0.020195227986454106,
+      "probe_kl": 4.1020422941073775e-05,
+      "probe_entropy": 0.6724371910095215,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 28,
+      "gradient_norm": 17.402128219604492,
+      "parameter_delta_norm": 0.2026575654745102,
+      "relative_parameter_delta": 0.01971370929212632,
+      "probe_kl": 3.957330045523122e-05,
+      "probe_entropy": 0.6737956404685974,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 29,
+      "gradient_norm": 26.59252166748047,
+      "parameter_delta_norm": 0.19423159956932068,
+      "relative_parameter_delta": 0.01882018588097445,
+      "probe_kl": 4.630015973816626e-05,
+      "probe_entropy": 0.6709520816802979,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 30,
+      "gradient_norm": 18.65412139892578,
+      "parameter_delta_norm": 0.1907689869403839,
+      "relative_parameter_delta": 0.018412966636885953,
+      "probe_kl": 3.817196920863353e-05,
+      "probe_entropy": 0.6711549162864685,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 31,
+      "gradient_norm": 28.913881301879883,
+      "parameter_delta_norm": 0.18034328520298004,
+      "relative_parameter_delta": 0.0173407472503157,
+      "probe_kl": 8.458809315925464e-05,
+      "probe_entropy": 0.6714236736297607,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 32,
+      "gradient_norm": 29.67870330810547,
+      "parameter_delta_norm": 0.17774918675422668,
+      "relative_parameter_delta": 0.017029719051507027,
+      "probe_kl": 8.657689613755792e-05,
+      "probe_entropy": 0.6706217527389526,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 33,
+      "gradient_norm": 24.34047508239746,
+      "parameter_delta_norm": 0.17519249022006989,
+      "relative_parameter_delta": 0.01672675805078615,
+      "probe_kl": 7.819312304491177e-05,
+      "probe_entropy": 0.6698640584945679,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 34,
+      "gradient_norm": 28.588336944580078,
+      "parameter_delta_norm": 0.16307534277439117,
+      "relative_parameter_delta": 0.015518088578225021,
+      "probe_kl": 3.999683394795284e-05,
+      "probe_entropy": 0.6689811944961548,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 35,
+      "gradient_norm": 25.260948181152344,
+      "parameter_delta_norm": 0.17619527876377106,
+      "relative_parameter_delta": 0.016711991462557294,
+      "probe_kl": 4.3015446863137186e-05,
+      "probe_entropy": 0.6728250980377197,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 36,
+      "gradient_norm": 31.390899658203125,
+      "parameter_delta_norm": 0.1666487753391266,
+      "relative_parameter_delta": 0.015756955010814293,
+      "probe_kl": 3.212348747183569e-05,
+      "probe_entropy": 0.6670650243759155,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 37,
+      "gradient_norm": 20.952545166015625,
+      "parameter_delta_norm": 0.1688561737537384,
+      "relative_parameter_delta": 0.015917360940615417,
+      "probe_kl": 3.2579169783275574e-05,
+      "probe_entropy": 0.6715719103813171,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 38,
+      "gradient_norm": 13.132098197937012,
+      "parameter_delta_norm": 0.1911076009273529,
+      "relative_parameter_delta": 0.0179622946454678,
+      "probe_kl": 2.9447053748299368e-05,
+      "probe_entropy": 0.6753686666488647,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 39,
+      "gradient_norm": 31.362590789794922,
+      "parameter_delta_norm": 0.18073351681232452,
+      "relative_parameter_delta": 0.016938850787495987,
+      "probe_kl": 4.78048314107582e-05,
+      "probe_entropy": 0.6687331199645996,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 40,
+      "gradient_norm": 28.689254760742188,
+      "parameter_delta_norm": 0.1881367415189743,
+      "relative_parameter_delta": 0.01758211645938957,
+      "probe_kl": 3.358877438586205e-05,
+      "probe_entropy": 0.6678208708763123,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 41,
+      "gradient_norm": 25.03594398498535,
+      "parameter_delta_norm": 0.18227896094322205,
+      "relative_parameter_delta": 0.0169855585509856,
+      "probe_kl": 2.8639657102758065e-05,
+      "probe_entropy": 0.6726126074790955,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 42,
+      "gradient_norm": 18.752506256103516,
+      "parameter_delta_norm": 0.19074854254722595,
+      "relative_parameter_delta": 0.01772488709835074,
+      "probe_kl": 2.0231223970768042e-05,
+      "probe_entropy": 0.6711267232894897,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 43,
+      "gradient_norm": 27.759584426879883,
+      "parameter_delta_norm": 0.1882830709218979,
+      "relative_parameter_delta": 0.017447349240100576,
+      "probe_kl": 3.614421439124271e-05,
+      "probe_entropy": 0.6672704219818115,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 44,
+      "gradient_norm": 27.473278045654297,
+      "parameter_delta_norm": 0.17980937659740448,
+      "relative_parameter_delta": 0.016615288460767375,
+      "probe_kl": 2.70956770691555e-05,
+      "probe_entropy": 0.6649030447006226,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 45,
+      "gradient_norm": 12.060482025146484,
+      "parameter_delta_norm": 0.20194369554519653,
+      "relative_parameter_delta": 0.01860790876036974,
+      "probe_kl": 2.414092159597203e-05,
+      "probe_entropy": 0.6730138063430786,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 46,
+      "gradient_norm": 8.010404586791992,
+      "parameter_delta_norm": 0.21024812757968903,
+      "relative_parameter_delta": 0.019318764326227623,
+      "probe_kl": 2.6278014047420584e-05,
+      "probe_entropy": 0.6696568727493286,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 47,
+      "gradient_norm": 26.450489044189453,
+      "parameter_delta_norm": 0.2018255740404129,
+      "relative_parameter_delta": 0.018491757338812285,
+      "probe_kl": 2.6760415494209155e-05,
+      "probe_entropy": 0.671088457107544,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 48,
+      "gradient_norm": 18.360170364379883,
+      "parameter_delta_norm": 0.19478853046894073,
+      "relative_parameter_delta": 0.017794615101168962,
+      "probe_kl": 2.3388216504827142e-05,
+      "probe_entropy": 0.6691780686378479,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 49,
+      "gradient_norm": 23.48688316345215,
+      "parameter_delta_norm": 0.18236221373081207,
+      "relative_parameter_delta": 0.016609892557669065,
+      "probe_kl": 3.27099442074541e-05,
+      "probe_entropy": 0.6697317361831665,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 50,
+      "gradient_norm": 29.04678726196289,
+      "parameter_delta_norm": 0.19528311491012573,
+      "relative_parameter_delta": 0.0177340361646905,
+      "probe_kl": 2.0566356397466734e-05,
+      "probe_entropy": 0.6646367907524109,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 51,
+      "gradient_norm": 25.855432510375977,
+      "parameter_delta_norm": 0.1863122582435608,
+      "relative_parameter_delta": 0.016869874707246404,
+      "probe_kl": 2.6291663743904792e-05,
+      "probe_entropy": 0.6640079617500305,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 52,
+      "gradient_norm": 18.009695053100586,
+      "parameter_delta_norm": 0.18945318460464478,
+      "relative_parameter_delta": 0.017103001220375755,
+      "probe_kl": 2.8478931199060753e-05,
+      "probe_entropy": 0.6679916381835938,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 53,
+      "gradient_norm": 24.800827026367188,
+      "parameter_delta_norm": 0.2117236703634262,
+      "relative_parameter_delta": 0.01905541237235071,
+      "probe_kl": 2.677442171261646e-05,
+      "probe_entropy": 0.6627486944198608,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 54,
+      "gradient_norm": 27.79396629333496,
+      "parameter_delta_norm": 0.19867290556430817,
+      "relative_parameter_delta": 0.01782644867741991,
+      "probe_kl": 3.246299456804991e-05,
+      "probe_entropy": 0.6624146699905396,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 55,
+      "gradient_norm": 14.822678565979004,
+      "parameter_delta_norm": 0.24549999833106995,
+      "relative_parameter_delta": 0.021960118785351642,
+      "probe_kl": 3.291151369921863e-05,
+      "probe_entropy": 0.663021445274353,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 56,
+      "gradient_norm": 22.632274627685547,
+      "parameter_delta_norm": 0.24280627071857452,
+      "relative_parameter_delta": 0.021653720385805784,
+      "probe_kl": 3.508005102048628e-05,
+      "probe_entropy": 0.6715719699859619,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 57,
+      "gradient_norm": 19.296205520629883,
+      "parameter_delta_norm": 0.24359039962291718,
+      "relative_parameter_delta": 0.02165548877471091,
+      "probe_kl": 4.052937219967134e-05,
+      "probe_entropy": 0.6673249006271362,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 58,
+      "gradient_norm": 28.541112899780273,
+      "parameter_delta_norm": 0.23182159662246704,
+      "relative_parameter_delta": 0.020541673391850177,
+      "probe_kl": 7.108715362846851e-05,
+      "probe_entropy": 0.6579734086990356,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 59,
+      "gradient_norm": 20.29027557373047,
+      "parameter_delta_norm": 0.240144744515419,
+      "relative_parameter_delta": 0.0212098817629815,
+      "probe_kl": 9.035716357175261e-05,
+      "probe_entropy": 0.6616553664207458,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 60,
+      "gradient_norm": 27.494050979614258,
+      "parameter_delta_norm": 0.23294934630393982,
+      "relative_parameter_delta": 0.02050672308206615,
+      "probe_kl": 9.944222256308421e-05,
+      "probe_entropy": 0.6568756103515625,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 61,
+      "gradient_norm": 24.127225875854492,
+      "parameter_delta_norm": 0.21684709191322327,
+      "relative_parameter_delta": 0.019025663925812005,
+      "probe_kl": 8.30039061838761e-05,
+      "probe_entropy": 0.6603990793228149,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 62,
+      "gradient_norm": 26.72353744506836,
+      "parameter_delta_norm": 0.20276014506816864,
+      "relative_parameter_delta": 0.017730131822191506,
+      "probe_kl": 7.143189577618614e-05,
+      "probe_entropy": 0.6553009748458862,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 63,
+      "gradient_norm": 22.668237686157227,
+      "parameter_delta_norm": 0.20070941746234894,
+      "relative_parameter_delta": 0.017492727314399114,
+      "probe_kl": 6.147362000774592e-05,
+      "probe_entropy": 0.6562216281890869,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 64,
+      "gradient_norm": 24.12494468688965,
+      "parameter_delta_norm": 0.2832091748714447,
+      "relative_parameter_delta": 0.02460245904593278,
+      "probe_kl": 7.732532685622573e-05,
+      "probe_entropy": 0.653546154499054,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 65,
+      "gradient_norm": 30.125288009643555,
+      "parameter_delta_norm": 0.2703019380569458,
+      "relative_parameter_delta": 0.02340473017586405,
+      "probe_kl": 0.00014405636466108263,
+      "probe_entropy": 0.6583952307701111,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 66,
+      "gradient_norm": 18.219663619995117,
+      "parameter_delta_norm": 0.26997247338294983,
+      "relative_parameter_delta": 0.023294458821420918,
+      "probe_kl": 0.00012026255717501044,
+      "probe_entropy": 0.6526294350624084,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 67,
+      "gradient_norm": 12.99703598022461,
+      "parameter_delta_norm": 0.26428499817848206,
+      "relative_parameter_delta": 0.02272291180909937,
+      "probe_kl": 0.0001551296008983627,
+      "probe_entropy": 0.6567111015319824,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 68,
+      "gradient_norm": 33.0364990234375,
+      "parameter_delta_norm": 0.24534450471401215,
+      "relative_parameter_delta": 0.02101513109666839,
+      "probe_kl": 8.076927770162001e-05,
+      "probe_entropy": 0.6465936899185181,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 69,
+      "gradient_norm": 14.30274772644043,
+      "parameter_delta_norm": 0.25481468439102173,
+      "relative_parameter_delta": 0.021741941078838783,
+      "probe_kl": 0.0001237626129295677,
+      "probe_entropy": 0.6527376770973206,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 70,
+      "gradient_norm": 21.273454666137695,
+      "parameter_delta_norm": 0.2518429458141327,
+      "relative_parameter_delta": 0.02140567735875959,
+      "probe_kl": 0.00010568604920990765,
+      "probe_entropy": 0.6480481624603271,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 71,
+      "gradient_norm": 12.021407127380371,
+      "parameter_delta_norm": 0.25715845823287964,
+      "relative_parameter_delta": 0.021771652343327376,
+      "probe_kl": 7.744347385596484e-05,
+      "probe_entropy": 0.646720290184021,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 72,
+      "gradient_norm": 22.849531173706055,
+      "parameter_delta_norm": 0.24270235002040863,
+      "relative_parameter_delta": 0.020468654640766436,
+      "probe_kl": 6.471920642070472e-05,
+      "probe_entropy": 0.6424146890640259,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 73,
+      "gradient_norm": 20.597423553466797,
+      "parameter_delta_norm": 0.2309332937002182,
+      "relative_parameter_delta": 0.019401260485265647,
+      "probe_kl": 3.912340980605222e-05,
+      "probe_entropy": 0.6330524682998657,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 74,
+      "gradient_norm": 12.294496536254883,
+      "parameter_delta_norm": 0.23082570731639862,
+      "relative_parameter_delta": 0.019320614042475,
+      "probe_kl": 3.384063165867701e-05,
+      "probe_entropy": 0.640356719493866,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 75,
+      "gradient_norm": 31.465415954589844,
+      "parameter_delta_norm": 0.221420556306839,
+      "relative_parameter_delta": 0.01846505967519648,
+      "probe_kl": 4.258352055330761e-05,
+      "probe_entropy": 0.6422773599624634,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 76,
+      "gradient_norm": 33.80757141113281,
+      "parameter_delta_norm": 0.2551504671573639,
+      "relative_parameter_delta": 0.021199156663985586,
+      "probe_kl": 5.112006692797877e-05,
+      "probe_entropy": 0.6411468386650085,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 77,
+      "gradient_norm": 55.08731460571289,
+      "parameter_delta_norm": 0.23746342957019806,
+      "relative_parameter_delta": 0.019658352536531407,
+      "probe_kl": 8.414211333729327e-05,
+      "probe_entropy": 0.6372722387313843,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 78,
+      "gradient_norm": 26.478057861328125,
+      "parameter_delta_norm": 0.24185782670974731,
+      "relative_parameter_delta": 0.019946221457006894,
+      "probe_kl": 7.211686170194298e-05,
+      "probe_entropy": 0.6234873533248901,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 79,
+      "gradient_norm": 40.60061264038086,
+      "parameter_delta_norm": 0.2421419471502304,
+      "relative_parameter_delta": 0.01989436763527925,
+      "probe_kl": 0.000122786033898592,
+      "probe_entropy": 0.6345690488815308,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 80,
+      "gradient_norm": 11.784062385559082,
+      "parameter_delta_norm": 0.2718105912208557,
+      "relative_parameter_delta": 0.022243756953757746,
+      "probe_kl": 9.349656465929002e-05,
+      "probe_entropy": 0.6338475942611694,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 81,
+      "gradient_norm": 28.28446388244629,
+      "parameter_delta_norm": 0.2545231878757477,
+      "relative_parameter_delta": 0.020749231428332418,
+      "probe_kl": 9.530070383334532e-05,
+      "probe_entropy": 0.6266297101974487,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 82,
+      "gradient_norm": 32.64603805541992,
+      "parameter_delta_norm": 0.23670275509357452,
+      "relative_parameter_delta": 0.019221526746758158,
+      "probe_kl": 0.00012487435014918447,
+      "probe_entropy": 0.6254671812057495,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 83,
+      "gradient_norm": 33.85007858276367,
+      "parameter_delta_norm": 0.2172803431749344,
+      "relative_parameter_delta": 0.017576640535003935,
+      "probe_kl": 9.51996335061267e-05,
+      "probe_entropy": 0.6241316795349121,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 84,
+      "gradient_norm": 18.004196166992188,
+      "parameter_delta_norm": 0.2334718257188797,
+      "relative_parameter_delta": 0.018816832297399055,
+      "probe_kl": 0.00010729192581493407,
+      "probe_entropy": 0.6331720352172852,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 85,
+      "gradient_norm": 20.8577938079834,
+      "parameter_delta_norm": 0.23063790798187256,
+      "relative_parameter_delta": 0.018519497357479403,
+      "probe_kl": 8.451122266706079e-05,
+      "probe_entropy": 0.6219099164009094,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 86,
+      "gradient_norm": 31.51791763305664,
+      "parameter_delta_norm": 0.22422534227371216,
+      "relative_parameter_delta": 0.01793919210452888,
+      "probe_kl": 7.121957605704665e-05,
+      "probe_entropy": 0.6225823163986206,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 87,
+      "gradient_norm": 38.638004302978516,
+      "parameter_delta_norm": 0.22088168561458588,
+      "relative_parameter_delta": 0.017608142228495768,
+      "probe_kl": 9.221899381373078e-05,
+      "probe_entropy": 0.6212961077690125,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 88,
+      "gradient_norm": 38.936466217041016,
+      "parameter_delta_norm": 0.20877081155776978,
+      "relative_parameter_delta": 0.01658279867675195,
+      "probe_kl": 0.000122238474432379,
+      "probe_entropy": 0.6133288145065308,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 89,
+      "gradient_norm": 37.810298919677734,
+      "parameter_delta_norm": 0.1943490356206894,
+      "relative_parameter_delta": 0.015382449324428877,
+      "probe_kl": 5.9821832110174e-05,
+      "probe_entropy": 0.6125617027282715,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 90,
+      "gradient_norm": 33.1432991027832,
+      "parameter_delta_norm": 0.182264044880867,
+      "relative_parameter_delta": 0.01437874369445916,
+      "probe_kl": 8.323622023453936e-05,
+      "probe_entropy": 0.6099954843521118,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 91,
+      "gradient_norm": 30.416278839111328,
+      "parameter_delta_norm": 0.17819134891033173,
+      "relative_parameter_delta": 0.014013146223188062,
+      "probe_kl": 7.976345659699291e-05,
+      "probe_entropy": 0.6101118326187134,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 92,
+      "gradient_norm": 30.273778915405273,
+      "parameter_delta_norm": 0.168304443359375,
+      "relative_parameter_delta": 0.013196814698116881,
+      "probe_kl": 7.331083179451525e-05,
+      "probe_entropy": 0.6094869375228882,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 93,
+      "gradient_norm": 33.50151824951172,
+      "parameter_delta_norm": 0.16068409383296967,
+      "relative_parameter_delta": 0.012564072145018574,
+      "probe_kl": 0.00010062729415949434,
+      "probe_entropy": 0.6093522310256958,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 94,
+      "gradient_norm": 34.13706970214844,
+      "parameter_delta_norm": 0.15305142104625702,
+      "relative_parameter_delta": 0.011934947089006675,
+      "probe_kl": 0.00010758653661468998,
+      "probe_entropy": 0.6072853803634644,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 95,
+      "gradient_norm": 29.263652801513672,
+      "parameter_delta_norm": 0.14597532153129578,
+      "relative_parameter_delta": 0.011353747645209281,
+      "probe_kl": 0.00010391093383077532,
+      "probe_entropy": 0.5913218259811401,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 96,
+      "gradient_norm": 37.48021697998047,
+      "parameter_delta_norm": 0.1484762728214264,
+      "relative_parameter_delta": 0.011520385557016078,
+      "probe_kl": 0.00012364181748125702,
+      "probe_entropy": 0.5977312922477722,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 97,
+      "gradient_norm": 24.033037185668945,
+      "parameter_delta_norm": 0.17014512419700623,
+      "relative_parameter_delta": 0.013169793079119035,
+      "probe_kl": 0.0001129819720517844,
+      "probe_entropy": 0.6056362390518188,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 98,
+      "gradient_norm": 22.60991668701172,
+      "parameter_delta_norm": 0.1864287108182907,
+      "relative_parameter_delta": 0.01439695675838775,
+      "probe_kl": 8.666982466820627e-05,
+      "probe_entropy": 0.6014075875282288,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 99,
+      "gradient_norm": 29.35356330871582,
+      "parameter_delta_norm": 0.19006618857383728,
+      "relative_parameter_delta": 0.014644542899501112,
+      "probe_kl": 0.00012989449896849692,
+      "probe_entropy": 0.5967066884040833,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 100,
+      "gradient_norm": 28.79444122314453,
+      "parameter_delta_norm": 0.18541930615901947,
+      "relative_parameter_delta": 0.014253471734758742,
+      "probe_kl": 0.00010267586912959814,
+      "probe_entropy": 0.5950996279716492,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 101,
+      "gradient_norm": 28.513193130493164,
+      "parameter_delta_norm": 0.22340723872184753,
+      "relative_parameter_delta": 0.01713404717922447,
+      "probe_kl": 0.00013591418974101543,
+      "probe_entropy": 0.573499321937561,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 102,
+      "gradient_norm": 39.64651107788086,
+      "parameter_delta_norm": 0.21576283872127533,
+      "relative_parameter_delta": 0.016509022193337424,
+      "probe_kl": 0.00012305498239584267,
+      "probe_entropy": 0.5945396423339844,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 103,
+      "gradient_norm": 24.332365036010742,
+      "parameter_delta_norm": 0.22900858521461487,
+      "relative_parameter_delta": 0.017479860606113545,
+      "probe_kl": 0.0001837146992329508,
+      "probe_entropy": 0.5771682262420654,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 104,
+      "gradient_norm": 34.58144760131836,
+      "parameter_delta_norm": 0.21231672167778015,
+      "relative_parameter_delta": 0.01616324335200784,
+      "probe_kl": 0.0001596244255779311,
+      "probe_entropy": 0.5644228458404541,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 105,
+      "gradient_norm": 36.626068115234375,
+      "parameter_delta_norm": 0.20172695815563202,
+      "relative_parameter_delta": 0.0153170615598365,
+      "probe_kl": 0.00019840922323055565,
+      "probe_entropy": 0.5698239207267761,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 106,
+      "gradient_norm": 15.665525436401367,
+      "parameter_delta_norm": 0.2147333025932312,
+      "relative_parameter_delta": 0.016262434489413762,
+      "probe_kl": 0.00015534879639744759,
+      "probe_entropy": 0.5940181016921997,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 107,
+      "gradient_norm": 15.336816787719727,
+      "parameter_delta_norm": 0.23953771591186523,
+      "relative_parameter_delta": 0.018093788298927375,
+      "probe_kl": 0.00014099018881097436,
+      "probe_entropy": 0.5686708688735962,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 108,
+      "gradient_norm": 32.410011291503906,
+      "parameter_delta_norm": 0.22287704050540924,
+      "relative_parameter_delta": 0.01679231364961759,
+      "probe_kl": 0.0001732718083076179,
+      "probe_entropy": 0.5508630275726318,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 109,
+      "gradient_norm": 16.668296813964844,
+      "parameter_delta_norm": 0.25041723251342773,
+      "relative_parameter_delta": 0.018819302970197686,
+      "probe_kl": 0.00012262826203368604,
+      "probe_entropy": 0.5673598647117615,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 110,
+      "gradient_norm": 45.27309799194336,
+      "parameter_delta_norm": 0.23326320946216583,
+      "relative_parameter_delta": 0.017486155021154744,
+      "probe_kl": 0.00012686304398812354,
+      "probe_entropy": 0.5445907115936279,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 111,
+      "gradient_norm": 8.6746187210083,
+      "parameter_delta_norm": 0.2485201507806778,
+      "relative_parameter_delta": 0.01858063318809207,
+      "probe_kl": 0.00016740939463488758,
+      "probe_entropy": 0.5583622455596924,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 112,
+      "gradient_norm": 36.01552963256836,
+      "parameter_delta_norm": 0.23066096007823944,
+      "relative_parameter_delta": 0.017197916478533956,
+      "probe_kl": 0.00016540545038878918,
+      "probe_entropy": 0.5336560010910034,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 113,
+      "gradient_norm": 10.963207244873047,
+      "parameter_delta_norm": 0.24251893162727356,
+      "relative_parameter_delta": 0.01803144931994083,
+      "probe_kl": 0.00013262753782328218,
+      "probe_entropy": 0.5663139820098877,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 114,
+      "gradient_norm": 17.96012306213379,
+      "parameter_delta_norm": 0.24892444908618927,
+      "relative_parameter_delta": 0.01845554516346603,
+      "probe_kl": 0.00014832368469797075,
+      "probe_entropy": 0.5622831583023071,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 115,
+      "gradient_norm": 29.651304244995117,
+      "parameter_delta_norm": 0.30667969584465027,
+      "relative_parameter_delta": 0.02267117655759353,
+      "probe_kl": 0.00018196934252046049,
+      "probe_entropy": 0.5605971813201904,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 116,
+      "gradient_norm": 39.72232437133789,
+      "parameter_delta_norm": 0.28278830647468567,
+      "relative_parameter_delta": 0.020846930589026175,
+      "probe_kl": 0.00012169429828645661,
+      "probe_entropy": 0.520258367061615,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 117,
+      "gradient_norm": 55.7702751159668,
+      "parameter_delta_norm": 0.26398834586143494,
+      "relative_parameter_delta": 0.019402619995128524,
+      "probe_kl": 0.00015313108451664448,
+      "probe_entropy": 0.5088984370231628,
+      "probe_saturated_fraction": 0.01953125
+    },
+    {
+      "episode": 118,
+      "gradient_norm": 32.114845275878906,
+      "parameter_delta_norm": 0.2611776292324066,
+      "relative_parameter_delta": 0.019135145462326524,
+      "probe_kl": 0.00013427365047391504,
+      "probe_entropy": 0.52778559923172,
+      "probe_saturated_fraction": 0.01953125
+    },
+    {
+      "episode": 119,
+      "gradient_norm": 53.150421142578125,
+      "parameter_delta_norm": 0.2563435137271881,
+      "relative_parameter_delta": 0.01872303470260507,
+      "probe_kl": 8.7752916442696e-05,
+      "probe_entropy": 0.5313737988471985,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 120,
+      "gradient_norm": 27.847654342651367,
+      "parameter_delta_norm": 0.2632223665714264,
+      "relative_parameter_delta": 0.01916559213677082,
+      "probe_kl": 6.135425064712763e-05,
+      "probe_entropy": 0.521418571472168,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 121,
+      "gradient_norm": 14.655719757080078,
+      "parameter_delta_norm": 0.2984711229801178,
+      "relative_parameter_delta": 0.021663486249689726,
+      "probe_kl": 6.428256165236235e-05,
+      "probe_entropy": 0.5226735472679138,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 122,
+      "gradient_norm": 24.33599853515625,
+      "parameter_delta_norm": 0.29362285137176514,
+      "relative_parameter_delta": 0.021241801713068807,
+      "probe_kl": 7.66576558817178e-05,
+      "probe_entropy": 0.5045545697212219,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 123,
+      "gradient_norm": 11.395130157470703,
+      "parameter_delta_norm": 0.3141467571258545,
+      "relative_parameter_delta": 0.022650715452951737,
+      "probe_kl": 8.887457806849852e-05,
+      "probe_entropy": 0.534367561340332,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 124,
+      "gradient_norm": 35.646419525146484,
+      "parameter_delta_norm": 0.29637283086776733,
+      "relative_parameter_delta": 0.021297100225663185,
+      "probe_kl": 0.00012481483281590044,
+      "probe_entropy": 0.5277074575424194,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 125,
+      "gradient_norm": 37.58846664428711,
+      "parameter_delta_norm": 0.2728484869003296,
+      "relative_parameter_delta": 0.019537754296853258,
+      "probe_kl": 9.9314893304836e-05,
+      "probe_entropy": 0.5088611245155334,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 126,
+      "gradient_norm": 30.056299209594727,
+      "parameter_delta_norm": 0.2762061655521393,
+      "relative_parameter_delta": 0.01971067077685684,
+      "probe_kl": 0.00010969614231726155,
+      "probe_entropy": 0.5397968292236328,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 127,
+      "gradient_norm": 27.7819766998291,
+      "parameter_delta_norm": 0.26732325553894043,
+      "relative_parameter_delta": 0.01901457191143597,
+      "probe_kl": 0.00010578936053207144,
+      "probe_entropy": 0.5477612018585205,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 128,
+      "gradient_norm": 36.98322296142578,
+      "parameter_delta_norm": 0.24701257050037384,
+      "relative_parameter_delta": 0.017510494550555904,
+      "probe_kl": 0.00011286530934739858,
+      "probe_entropy": 0.5150513648986816,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 129,
+      "gradient_norm": 37.0388069152832,
+      "parameter_delta_norm": 0.23154792189598083,
+      "relative_parameter_delta": 0.016362368736445036,
+      "probe_kl": 0.00011948806059081107,
+      "probe_entropy": 0.5044845342636108,
+      "probe_saturated_fraction": 0.0234375
+    },
+    {
+      "episode": 130,
+      "gradient_norm": 27.331850051879883,
+      "parameter_delta_norm": 0.23017434775829315,
+      "relative_parameter_delta": 0.016213991294214906,
+      "probe_kl": 0.00011982275464106351,
+      "probe_entropy": 0.5191450715065002,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 131,
+      "gradient_norm": 26.324851989746094,
+      "parameter_delta_norm": 0.24105778336524963,
+      "relative_parameter_delta": 0.01692747284976799,
+      "probe_kl": 0.00011106844613095745,
+      "probe_entropy": 0.5551819801330566,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 132,
+      "gradient_norm": 23.82158660888672,
+      "parameter_delta_norm": 0.2431049346923828,
+      "relative_parameter_delta": 0.01701951341286331,
+      "probe_kl": 0.00010602937254589051,
+      "probe_entropy": 0.5318154096603394,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 133,
+      "gradient_norm": 30.177400588989258,
+      "parameter_delta_norm": 0.2589593529701233,
+      "relative_parameter_delta": 0.018075692278914587,
+      "probe_kl": 7.730457582511008e-05,
+      "probe_entropy": 0.5253946185112,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 134,
+      "gradient_norm": 31.588573455810547,
+      "parameter_delta_norm": 0.24105499684810638,
+      "relative_parameter_delta": 0.016776964670765875,
+      "probe_kl": 9.600466000847518e-05,
+      "probe_entropy": 0.5286535024642944,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 135,
+      "gradient_norm": 31.459028244018555,
+      "parameter_delta_norm": 0.23631007969379425,
+      "relative_parameter_delta": 0.016400191180186742,
+      "probe_kl": 0.00014447129797190428,
+      "probe_entropy": 0.5486958026885986,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 136,
+      "gradient_norm": 21.684785842895508,
+      "parameter_delta_norm": 0.24338804185390472,
+      "relative_parameter_delta": 0.016845967108790678,
+      "probe_kl": 0.00011654228728730232,
+      "probe_entropy": 0.5633202195167542,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 137,
+      "gradient_norm": 24.98282814025879,
+      "parameter_delta_norm": 0.23418383300304413,
+      "relative_parameter_delta": 0.01616406296643489,
+      "probe_kl": 0.00010031161218648776,
+      "probe_entropy": 0.5547643899917603,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 138,
+      "gradient_norm": 35.20726013183594,
+      "parameter_delta_norm": 0.2451065629720688,
+      "relative_parameter_delta": 0.016872377444887034,
+      "probe_kl": 0.0001245842722710222,
+      "probe_entropy": 0.5804585814476013,
+      "probe_saturated_fraction": 0.01171875
+    },
+    {
+      "episode": 139,
+      "gradient_norm": 10.483160018920898,
+      "parameter_delta_norm": 0.2586148977279663,
+      "relative_parameter_delta": 0.017752244468277556,
+      "probe_kl": 0.00010960659710690379,
+      "probe_entropy": 0.5598660707473755,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 140,
+      "gradient_norm": 20.58541488647461,
+      "parameter_delta_norm": 0.2817593812942505,
+      "relative_parameter_delta": 0.019288335310285783,
+      "probe_kl": 9.123647032538429e-05,
+      "probe_entropy": 0.5461951494216919,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 141,
+      "gradient_norm": 32.33714294433594,
+      "parameter_delta_norm": 0.2681226134300232,
+      "relative_parameter_delta": 0.01830434235293995,
+      "probe_kl": 0.00012238651106599718,
+      "probe_entropy": 0.5877009630203247,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 142,
+      "gradient_norm": 23.082290649414062,
+      "parameter_delta_norm": 0.2609959840774536,
+      "relative_parameter_delta": 0.017769384371241627,
+      "probe_kl": 0.00010529818973736838,
+      "probe_entropy": 0.5515979528427124,
+      "probe_saturated_fraction": 0.01171875
+    },
+    {
+      "episode": 143,
+      "gradient_norm": 33.6768798828125,
+      "parameter_delta_norm": 0.2490929216146469,
+      "relative_parameter_delta": 0.016911662144896374,
+      "probe_kl": 0.00016421749023720622,
+      "probe_entropy": 0.5478594303131104,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 144,
+      "gradient_norm": 28.139192581176758,
+      "parameter_delta_norm": 0.24059218168258667,
+      "relative_parameter_delta": 0.016288000480093396,
+      "probe_kl": 9.870495705399662e-05,
+      "probe_entropy": 0.5651692152023315,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 145,
+      "gradient_norm": 20.475332260131836,
+      "parameter_delta_norm": 0.2261437326669693,
+      "relative_parameter_delta": 0.015266576324676075,
+      "probe_kl": 9.01440653251484e-05,
+      "probe_entropy": 0.5731755495071411,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 146,
+      "gradient_norm": 28.903106689453125,
+      "parameter_delta_norm": 0.2079038918018341,
+      "relative_parameter_delta": 0.013997668280934947,
+      "probe_kl": 8.467596489936113e-05,
+      "probe_entropy": 0.5738338828086853,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 147,
+      "gradient_norm": 18.618837356567383,
+      "parameter_delta_norm": 0.2276584506034851,
+      "relative_parameter_delta": 0.015288297999541832,
+      "probe_kl": 5.671397957485169e-05,
+      "probe_entropy": 0.5790064930915833,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 148,
+      "gradient_norm": 35.7403450012207,
+      "parameter_delta_norm": 0.21160471439361572,
+      "relative_parameter_delta": 0.014174395817305577,
+      "probe_kl": 6.468914943980053e-05,
+      "probe_entropy": 0.5521398782730103,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 149,
+      "gradient_norm": 30.524728775024414,
+      "parameter_delta_norm": 0.203094482421875,
+      "relative_parameter_delta": 0.013570824460722863,
+      "probe_kl": 7.154906779760495e-05,
+      "probe_entropy": 0.5736699104309082,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 150,
+      "gradient_norm": 16.46626091003418,
+      "parameter_delta_norm": 0.2080577164888382,
+      "relative_parameter_delta": 0.013870547061617614,
+      "probe_kl": 7.57415546104312e-05,
+      "probe_entropy": 0.5694231986999512,
+      "probe_saturated_fraction": 0.015625
+    },
+    {
+      "episode": 151,
+      "gradient_norm": 21.96722412109375,
+      "parameter_delta_norm": 0.21171969175338745,
+      "relative_parameter_delta": 0.014084100764891815,
+      "probe_kl": 6.375811790348962e-05,
+      "probe_entropy": 0.5882512331008911,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 152,
+      "gradient_norm": 31.34921646118164,
+      "parameter_delta_norm": 0.20612366497516632,
+      "relative_parameter_delta": 0.013681602181510103,
+      "probe_kl": 0.00010648052557371557,
+      "probe_entropy": 0.5874018669128418,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 153,
+      "gradient_norm": 25.73717498779297,
+      "parameter_delta_norm": 0.2169530689716339,
+      "relative_parameter_delta": 0.014371490307895824,
+      "probe_kl": 0.00010170014866162091,
+      "probe_entropy": 0.5917602181434631,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 154,
+      "gradient_norm": 24.11233139038086,
+      "parameter_delta_norm": 0.23307988047599792,
+      "relative_parameter_delta": 0.015410178817164808,
+      "probe_kl": 0.00012670879368670285,
+      "probe_entropy": 0.5882276296615601,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 155,
+      "gradient_norm": 29.695493698120117,
+      "parameter_delta_norm": 0.23225823044776917,
+      "relative_parameter_delta": 0.015326100168489908,
+      "probe_kl": 0.00011950857151532546,
+      "probe_entropy": 0.5895016193389893,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 156,
+      "gradient_norm": 24.902807235717773,
+      "parameter_delta_norm": 0.23836766183376312,
+      "relative_parameter_delta": 0.01570090161114354,
+      "probe_kl": 0.00011815695324912667,
+      "probe_entropy": 0.6111987829208374,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 157,
+      "gradient_norm": 30.40407371520996,
+      "parameter_delta_norm": 0.2643086314201355,
+      "relative_parameter_delta": 0.01737838400059193,
+      "probe_kl": 9.317496733274311e-05,
+      "probe_entropy": 0.5870187282562256,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 158,
+      "gradient_norm": 29.87099838256836,
+      "parameter_delta_norm": 0.24906998872756958,
+      "relative_parameter_delta": 0.016345742758634676,
+      "probe_kl": 6.226900586625561e-05,
+      "probe_entropy": 0.5824737548828125,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 159,
+      "gradient_norm": 22.912277221679688,
+      "parameter_delta_norm": 0.3168050944805145,
+      "relative_parameter_delta": 0.02075045746122792,
+      "probe_kl": 6.57832933939062e-05,
+      "probe_entropy": 0.5982840061187744,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 160,
+      "gradient_norm": 35.748538970947266,
+      "parameter_delta_norm": 0.2936297357082367,
+      "relative_parameter_delta": 0.01919603492609548,
+      "probe_kl": 5.8355646615382284e-05,
+      "probe_entropy": 0.5795060396194458,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 161,
+      "gradient_norm": 39.655601501464844,
+      "parameter_delta_norm": 0.28704896569252014,
+      "relative_parameter_delta": 0.01872691198503702,
+      "probe_kl": 6.530161772388965e-05,
+      "probe_entropy": 0.5899937152862549,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 162,
+      "gradient_norm": 31.922256469726562,
+      "parameter_delta_norm": 0.27042287588119507,
+      "relative_parameter_delta": 0.017603008185094252,
+      "probe_kl": 7.12606415618211e-05,
+      "probe_entropy": 0.5944299697875977,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 163,
+      "gradient_norm": 42.740787506103516,
+      "parameter_delta_norm": 0.24447126686573029,
+      "relative_parameter_delta": 0.015874996872644227,
+      "probe_kl": 3.937545989174396e-05,
+      "probe_entropy": 0.597632646560669,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 164,
+      "gradient_norm": 32.6086540222168,
+      "parameter_delta_norm": 0.22953934967517853,
+      "relative_parameter_delta": 0.014868708745556026,
+      "probe_kl": 4.400850593810901e-05,
+      "probe_entropy": 0.5948284864425659,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 165,
+      "gradient_norm": 36.787086486816406,
+      "parameter_delta_norm": 0.21185573935508728,
+      "relative_parameter_delta": 0.01368934245669232,
+      "probe_kl": 3.008783642144408e-05,
+      "probe_entropy": 0.5605956315994263,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 166,
+      "gradient_norm": 36.83810043334961,
+      "parameter_delta_norm": 0.19681821763515472,
+      "relative_parameter_delta": 0.01268792981767901,
+      "probe_kl": 4.113694012630731e-05,
+      "probe_entropy": 0.5845381021499634,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 167,
+      "gradient_norm": 25.31472396850586,
+      "parameter_delta_norm": 0.19673064351081848,
+      "relative_parameter_delta": 0.012652940843629445,
+      "probe_kl": 4.1942526877392083e-05,
+      "probe_entropy": 0.6163201928138733,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 168,
+      "gradient_norm": 29.784061431884766,
+      "parameter_delta_norm": 0.18386144936084747,
+      "relative_parameter_delta": 0.011798188696834007,
+      "probe_kl": 3.5230477806180716e-05,
+      "probe_entropy": 0.5916282534599304,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 169,
+      "gradient_norm": 34.53093719482422,
+      "parameter_delta_norm": 0.17775575816631317,
+      "relative_parameter_delta": 0.011381217210151786,
+      "probe_kl": 7.796108548063785e-05,
+      "probe_entropy": 0.592272162437439,
+      "probe_saturated_fraction": 0.0078125
+    },
+    {
+      "episode": 170,
+      "gradient_norm": 21.69146728515625,
+      "parameter_delta_norm": 0.18482854962348938,
+      "relative_parameter_delta": 0.01180958432144247,
+      "probe_kl": 7.603597623528913e-05,
+      "probe_entropy": 0.6036121249198914,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 171,
+      "gradient_norm": 42.22639465332031,
+      "parameter_delta_norm": 0.18399007618427277,
+      "relative_parameter_delta": 0.011733113778392859,
+      "probe_kl": 0.00010711356298997998,
+      "probe_entropy": 0.5918256044387817,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 172,
+      "gradient_norm": 25.890268325805664,
+      "parameter_delta_norm": 0.19756829738616943,
+      "relative_parameter_delta": 0.012575013508865834,
+      "probe_kl": 9.414660598849878e-05,
+      "probe_entropy": 0.6236661672592163,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 173,
+      "gradient_norm": 24.407007217407227,
+      "parameter_delta_norm": 0.18271754682064056,
+      "relative_parameter_delta": 0.011608565604738256,
+      "probe_kl": 7.097853085724637e-05,
+      "probe_entropy": 0.6036399602890015,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 174,
+      "gradient_norm": 13.16429328918457,
+      "parameter_delta_norm": 0.2596803605556488,
+      "relative_parameter_delta": 0.01646976511761509,
+      "probe_kl": 9.2487913207151e-05,
+      "probe_entropy": 0.6103134751319885,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 175,
+      "gradient_norm": 28.683086395263672,
+      "parameter_delta_norm": 0.2887497842311859,
+      "relative_parameter_delta": 0.018281690549262056,
+      "probe_kl": 8.670886745676398e-05,
+      "probe_entropy": 0.5848761200904846,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 176,
+      "gradient_norm": 14.273011207580566,
+      "parameter_delta_norm": 0.31386616826057434,
+      "relative_parameter_delta": 0.019834593338518294,
+      "probe_kl": 7.549416477559134e-05,
+      "probe_entropy": 0.6133574843406677,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 177,
+      "gradient_norm": 26.04974365234375,
+      "parameter_delta_norm": 0.30079731345176697,
+      "relative_parameter_delta": 0.01897035161228431,
+      "probe_kl": 6.940693856449798e-05,
+      "probe_entropy": 0.605674147605896,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 178,
+      "gradient_norm": 11.268099784851074,
+      "parameter_delta_norm": 0.27945470809936523,
+      "relative_parameter_delta": 0.01758756826950709,
+      "probe_kl": 5.613996472675353e-05,
+      "probe_entropy": 0.6054093837738037,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 179,
+      "gradient_norm": 31.04241371154785,
+      "parameter_delta_norm": 0.2581769824028015,
+      "relative_parameter_delta": 0.016212964967016887,
+      "probe_kl": 8.325603266712278e-05,
+      "probe_entropy": 0.5921773910522461,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 180,
+      "gradient_norm": 23.584808349609375,
+      "parameter_delta_norm": 0.23937539756298065,
+      "relative_parameter_delta": 0.014999940053317812,
+      "probe_kl": 7.578159420518205e-05,
+      "probe_entropy": 0.6001549363136292,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 181,
+      "gradient_norm": 25.112749099731445,
+      "parameter_delta_norm": 0.22738462686538696,
+      "relative_parameter_delta": 0.014218217256783452,
+      "probe_kl": 0.00011245065979892388,
+      "probe_entropy": 0.5940380096435547,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 182,
+      "gradient_norm": 25.912317276000977,
+      "parameter_delta_norm": 0.20761379599571228,
+      "relative_parameter_delta": 0.012953388483406603,
+      "probe_kl": 6.687075801892206e-05,
+      "probe_entropy": 0.5903416275978088,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 183,
+      "gradient_norm": 18.679162979125977,
+      "parameter_delta_norm": 0.22187654674053192,
+      "relative_parameter_delta": 0.013813311104705461,
+      "probe_kl": 5.526284803636372e-05,
+      "probe_entropy": 0.610621452331543,
+      "probe_saturated_fraction": 0.00390625
+    },
+    {
+      "episode": 184,
+      "gradient_norm": 20.88135528564453,
+      "parameter_delta_norm": 0.20772913098335266,
+      "relative_parameter_delta": 0.012905688323225783,
+      "probe_kl": 3.139283217024058e-05,
+      "probe_entropy": 0.6199791431427002,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 185,
+      "gradient_norm": 30.635229110717773,
+      "parameter_delta_norm": 0.19822339713573456,
+      "relative_parameter_delta": 0.01229001349284887,
+      "probe_kl": 4.3158062908332795e-05,
+      "probe_entropy": 0.6069497466087341,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 186,
+      "gradient_norm": 25.902767181396484,
+      "parameter_delta_norm": 0.1873089075088501,
+      "relative_parameter_delta": 0.011590951205996373,
+      "probe_kl": 4.0375605749432e-05,
+      "probe_entropy": 0.5986770391464233,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 187,
+      "gradient_norm": 26.9433536529541,
+      "parameter_delta_norm": 0.1802174597978592,
+      "relative_parameter_delta": 0.011131939189362729,
+      "probe_kl": 4.907050606561825e-05,
+      "probe_entropy": 0.5976163148880005,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 188,
+      "gradient_norm": 25.081581115722656,
+      "parameter_delta_norm": 0.1687094271183014,
+      "relative_parameter_delta": 0.010402030926911221,
+      "probe_kl": 5.065649020252749e-05,
+      "probe_entropy": 0.6013484597206116,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 189,
+      "gradient_norm": 24.589887619018555,
+      "parameter_delta_norm": 0.20551098883152008,
+      "relative_parameter_delta": 0.012649732799837984,
+      "probe_kl": 4.282337613403797e-05,
+      "probe_entropy": 0.6145354509353638,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 190,
+      "gradient_norm": 29.661178588867188,
+      "parameter_delta_norm": 0.19120030105113983,
+      "relative_parameter_delta": 0.011750117412942263,
+      "probe_kl": 2.696338742680382e-05,
+      "probe_entropy": 0.6048510074615479,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 191,
+      "gradient_norm": 47.379188537597656,
+      "parameter_delta_norm": 0.2021903246641159,
+      "relative_parameter_delta": 0.012406745254394199,
+      "probe_kl": 6.47438719170168e-05,
+      "probe_entropy": 0.6169577836990356,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 192,
+      "gradient_norm": 35.964019775390625,
+      "parameter_delta_norm": 0.18880444765090942,
+      "relative_parameter_delta": 0.011568162007010462,
+      "probe_kl": 3.753018972929567e-05,
+      "probe_entropy": 0.5949373245239258,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 193,
+      "gradient_norm": 13.411520004272461,
+      "parameter_delta_norm": 0.24928824603557587,
+      "relative_parameter_delta": 0.015251739488342176,
+      "probe_kl": 3.143461071886122e-05,
+      "probe_entropy": 0.6228219866752625,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 194,
+      "gradient_norm": 25.994380950927734,
+      "parameter_delta_norm": 0.23188841342926025,
+      "relative_parameter_delta": 0.014165118996783682,
+      "probe_kl": 3.6153207474853843e-05,
+      "probe_entropy": 0.6093030571937561,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 195,
+      "gradient_norm": 27.087404251098633,
+      "parameter_delta_norm": 0.23736557364463806,
+      "relative_parameter_delta": 0.014475827508881932,
+      "probe_kl": 3.5493681934894994e-05,
+      "probe_entropy": 0.6227569580078125,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 196,
+      "gradient_norm": 28.34983253479004,
+      "parameter_delta_norm": 0.21942749619483948,
+      "relative_parameter_delta": 0.01335883212930302,
+      "probe_kl": 3.098726665484719e-05,
+      "probe_entropy": 0.5986835956573486,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 197,
+      "gradient_norm": 24.519081115722656,
+      "parameter_delta_norm": 0.23789235949516296,
+      "relative_parameter_delta": 0.014457350179169258,
+      "probe_kl": 3.678530629258603e-05,
+      "probe_entropy": 0.6084883213043213,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 198,
+      "gradient_norm": 17.798721313476562,
+      "parameter_delta_norm": 0.24433520436286926,
+      "relative_parameter_delta": 0.014824631834730522,
+      "probe_kl": 3.1537820177618414e-05,
+      "probe_entropy": 0.6088401079177856,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 199,
+      "gradient_norm": 14.305207252502441,
+      "parameter_delta_norm": 0.26172101497650146,
+      "relative_parameter_delta": 0.015854920631912767,
+      "probe_kl": 4.299059946788475e-05,
+      "probe_entropy": 0.6223496198654175,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 200,
+      "gradient_norm": 26.472549438476562,
+      "parameter_delta_norm": 0.24470533430576324,
+      "relative_parameter_delta": 0.014800673389258443,
+      "probe_kl": 2.0259849407011643e-05,
+      "probe_entropy": 0.6087696552276611,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 201,
+      "gradient_norm": 42.148929595947266,
+      "parameter_delta_norm": 0.22581970691680908,
+      "relative_parameter_delta": 0.013635135407489304,
+      "probe_kl": 5.174191755941138e-05,
+      "probe_entropy": 0.5939983129501343,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 202,
+      "gradient_norm": 20.00263023376465,
+      "parameter_delta_norm": 0.3165382444858551,
+      "relative_parameter_delta": 0.0190792358203859,
+      "probe_kl": 3.3610198443057016e-05,
+      "probe_entropy": 0.6015989780426025,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 203,
+      "gradient_norm": 34.74609375,
+      "parameter_delta_norm": 0.33506521582603455,
+      "relative_parameter_delta": 0.020159104712303238,
+      "probe_kl": 7.173077028710395e-05,
+      "probe_entropy": 0.6045165061950684,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 204,
+      "gradient_norm": 19.503870010375977,
+      "parameter_delta_norm": 0.3167341351509094,
+      "relative_parameter_delta": 0.01901886016079112,
+      "probe_kl": 6.582859350601211e-05,
+      "probe_entropy": 0.6137299537658691,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 205,
+      "gradient_norm": 24.438199996948242,
+      "parameter_delta_norm": 0.28901469707489014,
+      "relative_parameter_delta": 0.017317682931080217,
+      "probe_kl": 5.8978817833121866e-05,
+      "probe_entropy": 0.6023942232131958,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 206,
+      "gradient_norm": 32.58913803100586,
+      "parameter_delta_norm": 0.2888917624950409,
+      "relative_parameter_delta": 0.017271875730174073,
+      "probe_kl": 3.062487667193636e-05,
+      "probe_entropy": 0.600651204586029,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 207,
+      "gradient_norm": 25.34612464904785,
+      "parameter_delta_norm": 0.274822860956192,
+      "relative_parameter_delta": 0.01639482112588378,
+      "probe_kl": 4.6747234591748565e-05,
+      "probe_entropy": 0.6092648506164551,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 208,
+      "gradient_norm": 25.188156127929688,
+      "parameter_delta_norm": 0.25565677881240845,
+      "relative_parameter_delta": 0.015218075573006248,
+      "probe_kl": 3.0450410122284666e-05,
+      "probe_entropy": 0.6008902788162231,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 209,
+      "gradient_norm": 20.69808006286621,
+      "parameter_delta_norm": 0.2745897173881531,
+      "relative_parameter_delta": 0.016310581732826537,
+      "probe_kl": 3.768555325223133e-05,
+      "probe_entropy": 0.614680826663971,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 210,
+      "gradient_norm": 21.52513313293457,
+      "parameter_delta_norm": 0.2654780149459839,
+      "relative_parameter_delta": 0.015736466499322883,
+      "probe_kl": 3.6057412216905504e-05,
+      "probe_entropy": 0.6100602746009827,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 211,
+      "gradient_norm": 12.434258460998535,
+      "parameter_delta_norm": 0.25992321968078613,
+      "relative_parameter_delta": 0.015375517370236031,
+      "probe_kl": 3.077355358982459e-05,
+      "probe_entropy": 0.6247244477272034,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 212,
+      "gradient_norm": 31.69115447998047,
+      "parameter_delta_norm": 0.2400035858154297,
+      "relative_parameter_delta": 0.014168761524061537,
+      "probe_kl": 3.2262989407172427e-05,
+      "probe_entropy": 0.6122770309448242,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 213,
+      "gradient_norm": 23.569597244262695,
+      "parameter_delta_norm": 0.23517458140850067,
+      "relative_parameter_delta": 0.013856286679921438,
+      "probe_kl": 3.5521887184586376e-05,
+      "probe_entropy": 0.6204183101654053,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 214,
+      "gradient_norm": 26.62442970275879,
+      "parameter_delta_norm": 0.23681268095970154,
+      "relative_parameter_delta": 0.013925639200371296,
+      "probe_kl": 9.077015420189127e-05,
+      "probe_entropy": 0.6195114254951477,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 215,
+      "gradient_norm": 22.118688583374023,
+      "parameter_delta_norm": 0.21725119650363922,
+      "relative_parameter_delta": 0.012750396084427712,
+      "probe_kl": 3.0957951821619645e-05,
+      "probe_entropy": 0.6120024919509888,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 216,
+      "gradient_norm": 8.287443161010742,
+      "parameter_delta_norm": 0.2240198403596878,
+      "relative_parameter_delta": 0.013122523310593017,
+      "probe_kl": 3.1797855626791716e-05,
+      "probe_entropy": 0.615378201007843,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 217,
+      "gradient_norm": 31.932348251342773,
+      "parameter_delta_norm": 0.21250542998313904,
+      "relative_parameter_delta": 0.012424408774741975,
+      "probe_kl": 3.1528012186754495e-05,
+      "probe_entropy": 0.6027834415435791,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 218,
+      "gradient_norm": 24.736106872558594,
+      "parameter_delta_norm": 0.2009042352437973,
+      "relative_parameter_delta": 0.011724288891700041,
+      "probe_kl": 3.539465615176596e-05,
+      "probe_entropy": 0.6074219346046448,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 219,
+      "gradient_norm": 26.257078170776367,
+      "parameter_delta_norm": 0.20445199310779572,
+      "relative_parameter_delta": 0.011909947024700048,
+      "probe_kl": 5.949767000856809e-05,
+      "probe_entropy": 0.6077411770820618,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 220,
+      "gradient_norm": 37.29041290283203,
+      "parameter_delta_norm": 0.21516849100589752,
+      "relative_parameter_delta": 0.012512973021965369,
+      "probe_kl": 3.862062658299692e-05,
+      "probe_entropy": 0.6070140600204468,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 221,
+      "gradient_norm": 36.94678497314453,
+      "parameter_delta_norm": 0.20161595940589905,
+      "relative_parameter_delta": 0.011704408221921389,
+      "probe_kl": 5.283242353470996e-05,
+      "probe_entropy": 0.5936087965965271,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 222,
+      "gradient_norm": 24.014122009277344,
+      "parameter_delta_norm": 0.18730106949806213,
+      "relative_parameter_delta": 0.010854997589122065,
+      "probe_kl": 6.488685903605074e-05,
+      "probe_entropy": 0.6188580393791199,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 223,
+      "gradient_norm": 13.918502807617188,
+      "parameter_delta_norm": 0.19669196009635925,
+      "relative_parameter_delta": 0.011380268299177782,
+      "probe_kl": 3.863284655380994e-05,
+      "probe_entropy": 0.606080949306488,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 224,
+      "gradient_norm": 19.567485809326172,
+      "parameter_delta_norm": 0.1963929682970047,
+      "relative_parameter_delta": 0.011344759340906093,
+      "probe_kl": 3.615763853304088e-05,
+      "probe_entropy": 0.6045937538146973,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 225,
+      "gradient_norm": 25.521638870239258,
+      "parameter_delta_norm": 0.1922042816877365,
+      "relative_parameter_delta": 0.011085774361709665,
+      "probe_kl": 4.090553193236701e-05,
+      "probe_entropy": 0.6105414628982544,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 226,
+      "gradient_norm": 24.090578079223633,
+      "parameter_delta_norm": 0.2245658040046692,
+      "relative_parameter_delta": 0.012933355169561876,
+      "probe_kl": 2.9175407689763233e-05,
+      "probe_entropy": 0.6247060298919678,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 227,
+      "gradient_norm": 31.09604835510254,
+      "parameter_delta_norm": 0.20742405951023102,
+      "relative_parameter_delta": 0.011929241224461812,
+      "probe_kl": 4.8159527068492025e-05,
+      "probe_entropy": 0.5912978649139404,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 228,
+      "gradient_norm": 24.23654556274414,
+      "parameter_delta_norm": 0.206931933760643,
+      "relative_parameter_delta": 0.011884192004060424,
+      "probe_kl": 5.856559437233955e-05,
+      "probe_entropy": 0.6243090629577637,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 229,
+      "gradient_norm": 21.74931526184082,
+      "parameter_delta_norm": 0.20627975463867188,
+      "relative_parameter_delta": 0.011829593475445965,
+      "probe_kl": 6.880205910420045e-05,
+      "probe_entropy": 0.6166622638702393,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 230,
+      "gradient_norm": 23.687013626098633,
+      "parameter_delta_norm": 0.19839462637901306,
+      "relative_parameter_delta": 0.011361111937881706,
+      "probe_kl": 5.3686071623815224e-05,
+      "probe_entropy": 0.6008445024490356,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 231,
+      "gradient_norm": 37.71070861816406,
+      "parameter_delta_norm": 0.1846059262752533,
+      "relative_parameter_delta": 0.010556670774118851,
+      "probe_kl": 3.7269495805958286e-05,
+      "probe_entropy": 0.6056650280952454,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 232,
+      "gradient_norm": 36.07002258300781,
+      "parameter_delta_norm": 0.20851269364356995,
+      "relative_parameter_delta": 0.011907012961700117,
+      "probe_kl": 4.6929177187848836e-05,
+      "probe_entropy": 0.6119346022605896,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 233,
+      "gradient_norm": 36.77466583251953,
+      "parameter_delta_norm": 0.2008698582649231,
+      "relative_parameter_delta": 0.011454720320812399,
+      "probe_kl": 3.5146069421898574e-05,
+      "probe_entropy": 0.6296919584274292,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 234,
+      "gradient_norm": 34.85145950317383,
+      "parameter_delta_norm": 0.18513494729995728,
+      "relative_parameter_delta": 0.010543384425962848,
+      "probe_kl": 4.009526310255751e-05,
+      "probe_entropy": 0.6090903282165527,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 235,
+      "gradient_norm": 22.863264083862305,
+      "parameter_delta_norm": 0.18283937871456146,
+      "relative_parameter_delta": 0.010399219290973457,
+      "probe_kl": 2.636761564644985e-05,
+      "probe_entropy": 0.6259327530860901,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 236,
+      "gradient_norm": 23.13140869140625,
+      "parameter_delta_norm": 0.19360041618347168,
+      "relative_parameter_delta": 0.01099739665749805,
+      "probe_kl": 3.8218029658310115e-05,
+      "probe_entropy": 0.614243745803833,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 237,
+      "gradient_norm": 27.92622184753418,
+      "parameter_delta_norm": 0.18043626844882965,
+      "relative_parameter_delta": 0.010236982587765906,
+      "probe_kl": 5.474121280713007e-05,
+      "probe_entropy": 0.6203349828720093,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 238,
+      "gradient_norm": 27.786052703857422,
+      "parameter_delta_norm": 0.19068610668182373,
+      "relative_parameter_delta": 0.010806131399405942,
+      "probe_kl": 6.696987111354247e-05,
+      "probe_entropy": 0.6202138662338257,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 239,
+      "gradient_norm": 13.797572135925293,
+      "parameter_delta_norm": 0.18688464164733887,
+      "relative_parameter_delta": 0.010579350602403394,
+      "probe_kl": 5.621194577543065e-05,
+      "probe_entropy": 0.62342768907547,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 240,
+      "gradient_norm": 24.333232879638672,
+      "parameter_delta_norm": 0.18434317409992218,
+      "relative_parameter_delta": 0.010424415351178393,
+      "probe_kl": 9.717209468362853e-05,
+      "probe_entropy": 0.6106177568435669,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 241,
+      "gradient_norm": 13.809035301208496,
+      "parameter_delta_norm": 0.1814550757408142,
+      "relative_parameter_delta": 0.010250068443530021,
+      "probe_kl": 5.402326496550813e-05,
+      "probe_entropy": 0.6295796632766724,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 242,
+      "gradient_norm": 20.73817253112793,
+      "parameter_delta_norm": 0.19305740296840668,
+      "relative_parameter_delta": 0.010893993021689682,
+      "probe_kl": 5.243469058768824e-05,
+      "probe_entropy": 0.6217367649078369,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 243,
+      "gradient_norm": 29.640846252441406,
+      "parameter_delta_norm": 0.213296577334404,
+      "relative_parameter_delta": 0.012024170300226756,
+      "probe_kl": 4.1819548641797155e-05,
+      "probe_entropy": 0.6141811609268188,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 244,
+      "gradient_norm": 32.87826156616211,
+      "parameter_delta_norm": 0.19917410612106323,
+      "relative_parameter_delta": 0.011216373439395473,
+      "probe_kl": 7.09186278982088e-05,
+      "probe_entropy": 0.6229518055915833,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 245,
+      "gradient_norm": 17.57918930053711,
+      "parameter_delta_norm": 0.2028903216123581,
+      "relative_parameter_delta": 0.011413569477325216,
+      "probe_kl": 5.125665484229103e-05,
+      "probe_entropy": 0.6274067163467407,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 246,
+      "gradient_norm": 22.820341110229492,
+      "parameter_delta_norm": 0.19148845970630646,
+      "relative_parameter_delta": 0.010760634046903219,
+      "probe_kl": 4.60646151623223e-05,
+      "probe_entropy": 0.6284365653991699,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 247,
+      "gradient_norm": 36.46305847167969,
+      "parameter_delta_norm": 0.17489494383335114,
+      "relative_parameter_delta": 0.009817349470778244,
+      "probe_kl": 3.763168933801353e-05,
+      "probe_entropy": 0.6209367513656616,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 248,
+      "gradient_norm": 16.29265594482422,
+      "parameter_delta_norm": 0.19883610308170319,
+      "relative_parameter_delta": 0.011149171294981218,
+      "probe_kl": 2.9733515475527383e-05,
+      "probe_entropy": 0.6445224285125732,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 249,
+      "gradient_norm": 24.403133392333984,
+      "parameter_delta_norm": 0.2129170298576355,
+      "relative_parameter_delta": 0.011925039728822744,
+      "probe_kl": 4.559080844046548e-05,
+      "probe_entropy": 0.6346303820610046,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 250,
+      "gradient_norm": 31.32411003112793,
+      "parameter_delta_norm": 0.19725339114665985,
+      "relative_parameter_delta": 0.011034896882072697,
+      "probe_kl": 6.531007966259494e-05,
+      "probe_entropy": 0.6269052028656006,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 251,
+      "gradient_norm": 20.873287200927734,
+      "parameter_delta_norm": 0.1873166412115097,
+      "relative_parameter_delta": 0.010466649094424952,
+      "probe_kl": 7.376476423814893e-05,
+      "probe_entropy": 0.6339230537414551,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 252,
+      "gradient_norm": 19.279499053955078,
+      "parameter_delta_norm": 0.1901056319475174,
+      "relative_parameter_delta": 0.010610223101083909,
+      "probe_kl": 5.73730721953325e-05,
+      "probe_entropy": 0.6339195370674133,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 253,
+      "gradient_norm": 16.656129837036133,
+      "parameter_delta_norm": 0.17831271886825562,
+      "relative_parameter_delta": 0.00993979475185764,
+      "probe_kl": 4.951667142449878e-05,
+      "probe_entropy": 0.6352247595787048,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 254,
+      "gradient_norm": 50.50920104980469,
+      "parameter_delta_norm": 0.16498062014579773,
+      "relative_parameter_delta": 0.009185648729962992,
+      "probe_kl": 4.194588109385222e-05,
+      "probe_entropy": 0.6306350231170654,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 255,
+      "gradient_norm": 23.33327865600586,
+      "parameter_delta_norm": 0.3316315710544586,
+      "relative_parameter_delta": 0.01844288772471874,
+      "probe_kl": 2.2360041839419864e-05,
+      "probe_entropy": 0.6282862424850464,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 256,
+      "gradient_norm": 33.539886474609375,
+      "parameter_delta_norm": 0.30645105242729187,
+      "relative_parameter_delta": 0.01702050989458782,
+      "probe_kl": 3.555490911821835e-05,
+      "probe_entropy": 0.6319043636322021,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 257,
+      "gradient_norm": 29.83521270751953,
+      "parameter_delta_norm": 0.28351882100105286,
+      "relative_parameter_delta": 0.015723983625089994,
+      "probe_kl": 2.4990389647427946e-05,
+      "probe_entropy": 0.6293690800666809,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 258,
+      "gradient_norm": 23.468225479125977,
+      "parameter_delta_norm": 0.2658745348453522,
+      "relative_parameter_delta": 0.01472095190484463,
+      "probe_kl": 2.427755134704057e-05,
+      "probe_entropy": 0.6218044757843018,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 259,
+      "gradient_norm": 28.825498580932617,
+      "parameter_delta_norm": 0.2643284499645233,
+      "relative_parameter_delta": 0.014610709896128808,
+      "probe_kl": 4.7824760258663446e-05,
+      "probe_entropy": 0.6425756216049194,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 260,
+      "gradient_norm": 76.10034942626953,
+      "parameter_delta_norm": 0.24471232295036316,
+      "relative_parameter_delta": 0.013503663086697485,
+      "probe_kl": 7.03238183632493e-05,
+      "probe_entropy": 0.6312021613121033,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 261,
+      "gradient_norm": 29.185916900634766,
+      "parameter_delta_norm": 0.23128832876682281,
+      "relative_parameter_delta": 0.012741274966287474,
+      "probe_kl": 3.081087925238535e-05,
+      "probe_entropy": 0.6443067789077759,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 262,
+      "gradient_norm": 21.755229949951172,
+      "parameter_delta_norm": 0.22881415486335754,
+      "relative_parameter_delta": 0.012584676983244631,
+      "probe_kl": 3.087463483097963e-05,
+      "probe_entropy": 0.6323342323303223,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 263,
+      "gradient_norm": 32.10916519165039,
+      "parameter_delta_norm": 0.21051520109176636,
+      "relative_parameter_delta": 0.011559660046020543,
+      "probe_kl": 3.406865653232671e-05,
+      "probe_entropy": 0.6285585761070251,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 264,
+      "gradient_norm": 30.432838439941406,
+      "parameter_delta_norm": 0.1936517059803009,
+      "relative_parameter_delta": 0.01061749172780248,
+      "probe_kl": 3.2862648367881775e-05,
+      "probe_entropy": 0.6377077698707581,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 265,
+      "gradient_norm": 36.25298309326172,
+      "parameter_delta_norm": 0.18647713959217072,
+      "relative_parameter_delta": 0.01020918258462165,
+      "probe_kl": 3.7411326047731563e-05,
+      "probe_entropy": 0.6345373392105103,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 266,
+      "gradient_norm": 4.194929599761963,
+      "parameter_delta_norm": 0.29531562328338623,
+      "relative_parameter_delta": 0.016144634736882716,
+      "probe_kl": 3.3733325835783035e-05,
+      "probe_entropy": 0.6341153383255005,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 267,
+      "gradient_norm": 35.574867248535156,
+      "parameter_delta_norm": 0.2696293890476227,
+      "relative_parameter_delta": 0.01472050346776225,
+      "probe_kl": 5.992845763103105e-05,
+      "probe_entropy": 0.635120689868927,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 268,
+      "gradient_norm": 25.683284759521484,
+      "parameter_delta_norm": 0.2525172531604767,
+      "relative_parameter_delta": 0.013766150302541406,
+      "probe_kl": 5.4318363254424185e-05,
+      "probe_entropy": 0.6340162754058838,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 269,
+      "gradient_norm": 26.217267990112305,
+      "parameter_delta_norm": 0.24500034749507904,
+      "relative_parameter_delta": 0.013336817344750012,
+      "probe_kl": 7.378499140031636e-05,
+      "probe_entropy": 0.6344555616378784,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 270,
+      "gradient_norm": 30.9201602935791,
+      "parameter_delta_norm": 0.22529874742031097,
+      "relative_parameter_delta": 0.012245545901166206,
+      "probe_kl": 8.64504836499691e-05,
+      "probe_entropy": 0.6324991583824158,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 271,
+      "gradient_norm": 33.33845520019531,
+      "parameter_delta_norm": 0.20706771314144135,
+      "relative_parameter_delta": 0.011237472165903636,
+      "probe_kl": 4.575551429297775e-05,
+      "probe_entropy": 0.6378797292709351,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 272,
+      "gradient_norm": 35.679203033447266,
+      "parameter_delta_norm": 0.2290218472480774,
+      "relative_parameter_delta": 0.012410575102779427,
+      "probe_kl": 6.267278513405472e-05,
+      "probe_entropy": 0.6434007287025452,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 273,
+      "gradient_norm": 32.062782287597656,
+      "parameter_delta_norm": 0.21773892641067505,
+      "relative_parameter_delta": 0.011783291453850113,
+      "probe_kl": 3.501540777506307e-05,
+      "probe_entropy": 0.6522384881973267,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 274,
+      "gradient_norm": 25.027027130126953,
+      "parameter_delta_norm": 0.22521516680717468,
+      "relative_parameter_delta": 0.01217087284334477,
+      "probe_kl": 3.091798862442374e-05,
+      "probe_entropy": 0.64853835105896,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 275,
+      "gradient_norm": 17.829364776611328,
+      "parameter_delta_norm": 0.20787352323532104,
+      "relative_parameter_delta": 0.011218806950691664,
+      "probe_kl": 1.857515235315077e-05,
+      "probe_entropy": 0.6463355422019958,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 276,
+      "gradient_norm": 21.10892677307129,
+      "parameter_delta_norm": 0.20143796503543854,
+      "relative_parameter_delta": 0.010857413773667945,
+      "probe_kl": 1.4055254723643884e-05,
+      "probe_entropy": 0.651917040348053,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 277,
+      "gradient_norm": 54.69395065307617,
+      "parameter_delta_norm": 0.19066163897514343,
+      "relative_parameter_delta": 0.010263750249376572,
+      "probe_kl": 3.796487726503983e-05,
+      "probe_entropy": 0.6407693028450012,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 278,
+      "gradient_norm": 20.880268096923828,
+      "parameter_delta_norm": 0.18320833146572113,
+      "relative_parameter_delta": 0.009849616171649278,
+      "probe_kl": 4.170824104221538e-05,
+      "probe_entropy": 0.6423370242118835,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 279,
+      "gradient_norm": 12.636735916137695,
+      "parameter_delta_norm": 0.4048324525356293,
+      "relative_parameter_delta": 0.021736800912100795,
+      "probe_kl": 4.037401231471449e-05,
+      "probe_entropy": 0.6482349634170532,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 280,
+      "gradient_norm": 31.693702697753906,
+      "parameter_delta_norm": 0.36981961131095886,
+      "relative_parameter_delta": 0.019831859422102933,
+      "probe_kl": 3.7688674638047814e-05,
+      "probe_entropy": 0.6411179304122925,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 281,
+      "gradient_norm": 21.308914184570312,
+      "parameter_delta_norm": 0.34193485975265503,
+      "relative_parameter_delta": 0.018307480750181265,
+      "probe_kl": 3.233640381949954e-05,
+      "probe_entropy": 0.6441382765769958,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 282,
+      "gradient_norm": 24.461448669433594,
+      "parameter_delta_norm": 0.3113776445388794,
+      "relative_parameter_delta": 0.01664198977982629,
+      "probe_kl": 1.9168242943123914e-05,
+      "probe_entropy": 0.6494157910346985,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 283,
+      "gradient_norm": 20.411949157714844,
+      "parameter_delta_norm": 0.28440842032432556,
+      "relative_parameter_delta": 0.015172647244822786,
+      "probe_kl": 2.3750631953589618e-05,
+      "probe_entropy": 0.6420528888702393,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 284,
+      "gradient_norm": 22.766870498657227,
+      "parameter_delta_norm": 0.26365429162979126,
+      "relative_parameter_delta": 0.014038896679768412,
+      "probe_kl": 2.1200601622695103e-05,
+      "probe_entropy": 0.6439632177352905,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 285,
+      "gradient_norm": 26.643123626708984,
+      "parameter_delta_norm": 0.24509134888648987,
+      "relative_parameter_delta": 0.013025457130626533,
+      "probe_kl": 3.193467273376882e-05,
+      "probe_entropy": 0.6406441330909729,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 286,
+      "gradient_norm": 29.766077041625977,
+      "parameter_delta_norm": 0.23704899847507477,
+      "relative_parameter_delta": 0.012574477196823811,
+      "probe_kl": 4.254005034454167e-05,
+      "probe_entropy": 0.637681245803833,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 287,
+      "gradient_norm": 23.517436981201172,
+      "parameter_delta_norm": 0.2177666276693344,
+      "relative_parameter_delta": 0.011530161297383667,
+      "probe_kl": 3.9377053326461464e-05,
+      "probe_entropy": 0.6340415477752686,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 288,
+      "gradient_norm": 25.44937515258789,
+      "parameter_delta_norm": 0.21380992233753204,
+      "relative_parameter_delta": 0.011300092172765702,
+      "probe_kl": 2.5055211153812706e-05,
+      "probe_entropy": 0.6421831846237183,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 289,
+      "gradient_norm": 35.208984375,
+      "parameter_delta_norm": 0.20262952148914337,
+      "relative_parameter_delta": 0.010690059236392331,
+      "probe_kl": 1.6259789845207706e-05,
+      "probe_entropy": 0.6357638835906982,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 290,
+      "gradient_norm": 23.136171340942383,
+      "parameter_delta_norm": 0.1955612152814865,
+      "relative_parameter_delta": 0.010300067893739235,
+      "probe_kl": 1.893599983304739e-05,
+      "probe_entropy": 0.6365829706192017,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 291,
+      "gradient_norm": 39.82378005981445,
+      "parameter_delta_norm": 0.18558837473392487,
+      "relative_parameter_delta": 0.009758986260488213,
+      "probe_kl": 4.698624979937449e-05,
+      "probe_entropy": 0.6320482492446899,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 292,
+      "gradient_norm": 33.19596481323242,
+      "parameter_delta_norm": 0.191957026720047,
+      "relative_parameter_delta": 0.010078203179897261,
+      "probe_kl": 5.308076651999727e-05,
+      "probe_entropy": 0.6348863840103149,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 293,
+      "gradient_norm": 13.74893569946289,
+      "parameter_delta_norm": 0.20950330793857574,
+      "relative_parameter_delta": 0.010982818690267713,
+      "probe_kl": 5.25185459991917e-05,
+      "probe_entropy": 0.6383788585662842,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 294,
+      "gradient_norm": 13.232888221740723,
+      "parameter_delta_norm": 0.2056863158941269,
+      "relative_parameter_delta": 0.010767042757060854,
+      "probe_kl": 6.270443554967642e-05,
+      "probe_entropy": 0.6346949338912964,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 295,
+      "gradient_norm": 47.48372268676758,
+      "parameter_delta_norm": 0.18907156586647034,
+      "relative_parameter_delta": 0.009883068032166048,
+      "probe_kl": 1.9154833353240974e-05,
+      "probe_entropy": 0.6390895843505859,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 296,
+      "gradient_norm": 26.338796615600586,
+      "parameter_delta_norm": 0.18410073220729828,
+      "relative_parameter_delta": 0.00960985769447775,
+      "probe_kl": 2.199169284722302e-05,
+      "probe_entropy": 0.6455658674240112,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 297,
+      "gradient_norm": 21.439617156982422,
+      "parameter_delta_norm": 0.18150594830513,
+      "relative_parameter_delta": 0.009462885726783951,
+      "probe_kl": 2.160869371437002e-05,
+      "probe_entropy": 0.6326164603233337,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 298,
+      "gradient_norm": 5.788758754730225,
+      "parameter_delta_norm": 0.3704449236392975,
+      "relative_parameter_delta": 0.019291270947938057,
+      "probe_kl": 2.7523343305801973e-05,
+      "probe_entropy": 0.6391049027442932,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 299,
+      "gradient_norm": 30.55052947998047,
+      "parameter_delta_norm": 0.3364064395427704,
+      "relative_parameter_delta": 0.01749859408862665,
+      "probe_kl": 3.198413469363004e-05,
+      "probe_entropy": 0.6379165649414062,
+      "probe_saturated_fraction": 0.0
+    },
+    {
+      "episode": 300,
+      "gradient_norm": 25.345869064331055,
+      "parameter_delta_norm": 0.31003421545028687,
+      "relative_parameter_delta": 0.016105234697065308,
+      "probe_kl": 4.940610233461484e-05,
+      "probe_entropy": 0.6440579295158386,
+      "probe_saturated_fraction": 0.0
+    }
+  ],
+  "elapsed_seconds": 538.0254542827606,
+  "decision": "stage complete; review score, discounted objective and exploration before continuing",
+  "signal": "needs_trend_review"
+}

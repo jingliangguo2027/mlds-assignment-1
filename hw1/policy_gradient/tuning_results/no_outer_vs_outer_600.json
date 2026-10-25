@@ -1,0 +1,97 @@
+{
+  "vs_weighted_same_600": {
+    "mean": -19.8,
+    "paired_episodes": 50,
+    "discounted_gain": 0.3890240503847599,
+    "discounted_gain_95_interval": [
+      0.24790774818137287,
+      0.5321685688793657
+    ],
+    "mean_discounted_return": -1.167057120203972,
+    "paired_score_gain": 0.88,
+    "paired_bootstrap_95_interval": [
+      0.52,
+      1.2004999999999926
+    ],
+    "clear_gain": false,
+    "mean_entropy_first256": 0.5660862636566162,
+    "mean_saturated_first256": 0.0025
+  },
+  "training_windows": [
+    {
+      "episodes": [
+        1,
+        100
+      ],
+      "score": -20.64,
+      "discounted_return": -1.4119258869811893
+    },
+    {
+      "episodes": [
+        101,
+        200
+      ],
+      "score": -20.38,
+      "discounted_return": -1.3390948532149196
+    },
+    {
+      "episodes": [
+        201,
+        300
+      ],
+      "score": -20.25,
+      "discounted_return": -1.2617223567515612
+    },
+    {
+      "episodes": [
+        301,
+        400
+      ],
+      "score": -20.13,
+      "discounted_return": -1.1918969563767314
+    },
+    {
+      "episodes": [
+        401,
+        500
+      ],
+      "score": -20.13,
+      "discounted_return": -1.376599630266428
+    },
+    {
+      "episodes": [
+        501,
+        600
+      ],
+      "score": -20.03,
+      "discounted_return": -1.1998624961078166
+    }
+  ],
+  "last300_update_stats": {
+    "gradient_norm": {
+      "mean": 132.0588701883952,
+      "max": 249.69065856933594
+    },
+    "parameter_delta_norm": {
+      "mean": 0.2162875425318877,
+      "max": 0.3153783082962036
+    },
+    "relative_parameter_delta": {
+      "mean": 0.012213093805274714,
+      "max": 0.019059380247915127
+    },
+    "probe_kl": {
+      "mean": 3.398484413537517e-05,
+      "max": 0.00010025242227129638
+    },
+    "probe_entropy": {
+      "mean": 0.5943935547272364,
+      "max": 0.6729503870010376
+    },
+    "probe_saturated_fraction": {
+      "mean": 0.0023046875,
+      "max": 0.02734375
+    }
+  },
+  "scope": "Fixed tuning seeds; single training seed; not final test."
+}

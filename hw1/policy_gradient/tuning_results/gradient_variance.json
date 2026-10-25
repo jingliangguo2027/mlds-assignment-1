@@ -1,0 +1,18 @@
+{
+  "pilot_episodes": 20,
+  "paired_episodes": 20,
+  "baseline": -1.497017297940947,
+  "statistics": {
+    "none": {
+      "sum_component_variances": 609.0264892578125,
+      "sample_mean_gradient_norm": 5.931694030761719,
+      "sample_mean_norm_over_gradient_std": 0.24035914467582123
+    },
+    "historical_ema": {
+      "sum_component_variances": 107.60743713378906,
+      "sample_mean_gradient_norm": 2.2532854080200195,
+      "sample_mean_norm_over_gradient_std": 0.2172176246730178
+    }
+  },
+  "variance_ratio": 0.1766876138095806
+}

@@ -1,0 +1,18 @@
+{
+  "gpu": "CUDA_VISIBLE_DEVICES=0",
+  "real_pong_updates": 3,
+  "trained_modes": [
+    [
+      256,
+      "default"
+    ],
+    [
+      128,
+      "he_small_output"
+    ]
+  ],
+  "same_config_resume": "passed; Adam step=2",
+  "changed_hidden_or_initialization_resume": "rejected",
+  "outer_discount": true,
+  "scope": "smoke only, not experimental results"
+}

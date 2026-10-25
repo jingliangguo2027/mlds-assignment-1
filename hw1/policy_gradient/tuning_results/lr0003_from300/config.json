@@ -1,0 +1,13 @@
+{
+  "lr": 0.0003,
+  "batch_size": 1,
+  "baseline": "none",
+  "gamma": 0.99,
+  "seed": 0,
+  "objective": "-sum(gamma**t * (G_t-b) * log_prob), averaged across batch episodes",
+  "training_env_seeds": "0,1,...",
+  "training_action_seeds": "10000,10001,...",
+  "validation_seeds": "200000..200049",
+  "device_name": "NVIDIA RTX A6000",
+  "torch": "2.14.1+cu126"
+}

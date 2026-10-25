@@ -1,0 +1,239 @@
+{
+  "completed_utc": "2026-10-24T19:53:45.881124+00:00",
+  "status": "complete",
+  "formula": "-sum(gamma**t*(G_t-b)*log pi)",
+  "lr": 0.001,
+  "gamma": 0.99,
+  "baseline": "none",
+  "runs": [
+    {
+      "experiment": "width32_default",
+      "hidden": 32,
+      "initialization": "default",
+      "episodes": 300,
+      "validation_episodes": 50,
+      "vs_128_default": {
+        "mean": -20.42,
+        "paired_episodes": 50,
+        "discounted_gain": -0.02931219220161438,
+        "discounted_gain_95_interval": [
+          -0.176801930308342,
+          0.11292112472653382
+        ],
+        "mean_discounted_return": -1.2110920950770379,
+        "paired_score_gain": -0.1,
+        "paired_bootstrap_95_interval": [
+          -0.40049999999999986,
+          0.2
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6599300169944763,
+        "mean_saturated_first256": 0.0
+      },
+      "vs_own_initial": {
+        "mean": -20.42,
+        "paired_episodes": 50,
+        "discounted_gain": 0.10837959200143814,
+        "discounted_gain_95_interval": [
+          -0.018502725578844543,
+          0.24702850976586316
+        ],
+        "mean_discounted_return": -1.2110920950770379,
+        "paired_score_gain": 0.2,
+        "paired_bootstrap_95_interval": [
+          -0.08,
+          0.48
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6599300169944763,
+        "mean_saturated_first256": 0.0
+      },
+      "mean_relative_parameter_update": 0.016850446132185434,
+      "training_last100_score": -20.48
+    },
+    {
+      "experiment": "width64_default",
+      "hidden": 64,
+      "initialization": "default",
+      "episodes": 300,
+      "validation_episodes": 50,
+      "vs_128_default": {
+        "mean": -20.4,
+        "paired_episodes": 50,
+        "discounted_gain": -0.14009495407342912,
+        "discounted_gain_95_interval": [
+          -0.27195445103943344,
+          -0.01338525388389827
+        ],
+        "mean_discounted_return": -1.3218748569488525,
+        "paired_score_gain": -0.08,
+        "paired_bootstrap_95_interval": [
+          -0.36,
+          0.22
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6641726517677307,
+        "mean_saturated_first256": 0.0
+      },
+      "vs_own_initial": {
+        "mean": -20.4,
+        "paired_episodes": 50,
+        "discounted_gain": 0.23231042623519899,
+        "discounted_gain_95_interval": [
+          0.11016933435201645,
+          0.35643578340113136
+        ],
+        "mean_discounted_return": -1.3218748569488525,
+        "paired_score_gain": 0.3,
+        "paired_bootstrap_95_interval": [
+          0.07950000000000017,
+          0.54
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6641726517677307,
+        "mean_saturated_first256": 0.0
+      },
+      "mean_relative_parameter_update": 0.017331171057709316,
+      "training_last100_score": -20.49
+    },
+    {
+      "experiment": "lr_001",
+      "hidden": 128,
+      "initialization": "default",
+      "episodes": 300,
+      "validation_episodes": 50,
+      "vs_128_default": {
+        "mean": -20.32,
+        "paired_episodes": 50,
+        "discounted_gain": 0.0,
+        "discounted_gain_95_interval": [
+          0.0,
+          0.0
+        ],
+        "mean_discounted_return": -1.1817799028754234,
+        "paired_score_gain": 0.0,
+        "paired_bootstrap_95_interval": [
+          0.0,
+          0.0
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6638515448570251,
+        "mean_saturated_first256": 0.0
+      },
+      "vs_own_initial": {
+        "mean": -20.32,
+        "paired_episodes": 50,
+        "discounted_gain": 0.29163993388414383,
+        "discounted_gain_95_interval": [
+          0.15811930557340384,
+          0.43147573462873684
+        ],
+        "mean_discounted_return": -1.1817799028754234,
+        "paired_score_gain": 0.06,
+        "paired_bootstrap_95_interval": [
+          -0.28,
+          0.38
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6638515448570251,
+        "mean_saturated_first256": 0.0
+      },
+      "mean_relative_parameter_update": 0.016499796878394965,
+      "training_last100_score": -20.55
+    },
+    {
+      "experiment": "width256_default",
+      "hidden": 256,
+      "initialization": "default",
+      "episodes": 300,
+      "validation_episodes": 50,
+      "vs_128_default": {
+        "mean": -20.84,
+        "paired_episodes": 50,
+        "discounted_gain": 0.0032709731906652452,
+        "discounted_gain_95_interval": [
+          -0.14386945441365243,
+          0.14881694762408731
+        ],
+        "mean_discounted_return": -1.1785089296847582,
+        "paired_score_gain": -0.52,
+        "paired_bootstrap_95_interval": [
+          -0.76,
+          -0.3
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6404286706447602,
+        "mean_saturated_first256": 0.0
+      },
+      "vs_own_initial": {
+        "mean": -20.84,
+        "paired_episodes": 50,
+        "discounted_gain": 0.2250197034329176,
+        "discounted_gain_95_interval": [
+          0.08532968452759088,
+          0.36830892951786515
+        ],
+        "mean_discounted_return": -1.1785089296847582,
+        "paired_score_gain": -0.32,
+        "paired_bootstrap_95_interval": [
+          -0.56,
+          -0.11950000000000727
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6404286706447602,
+        "mean_saturated_first256": 0.0
+      },
+      "mean_relative_parameter_update": 0.01654305020128047,
+      "training_last100_score": -20.68
+    },
+    {
+      "experiment": "width128_he_small",
+      "hidden": 128,
+      "initialization": "he_small_output",
+      "episodes": 300,
+      "validation_episodes": 50,
+      "vs_128_default": {
+        "mean": -20.7,
+        "paired_episodes": 50,
+        "discounted_gain": 0.05905499596148729,
+        "discounted_gain_95_interval": [
+          -0.10902673868089914,
+          0.2197544019548222
+        ],
+        "mean_discounted_return": -1.1227249069139362,
+        "paired_score_gain": -0.38,
+        "paired_bootstrap_95_interval": [
+          -0.66,
+          -0.12
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6501063549518585,
+        "mean_saturated_first256": 0.0
+      },
+      "vs_own_initial": {
+        "mean": -20.7,
+        "paired_episodes": 50,
+        "discounted_gain": 0.24478199411183596,
+        "discounted_gain_95_interval": [
+          0.0790119358599186,
+          0.4028438556101173
+        ],
+        "mean_discounted_return": -1.1227249069139362,
+        "paired_score_gain": -0.14,
+        "paired_bootstrap_95_interval": [
+          -0.4,
+          0.12
+        ],
+        "clear_gain": false,
+        "mean_entropy_first256": 0.6501063549518585,
+        "mean_saturated_first256": 0.0
+      },
+      "mean_relative_parameter_update": 0.009705716901639728,
+      "training_last100_score": -20.7
+    }
+  ],
+  "conclusion": "\u672c\u6b21300\u5c40\u3001\u5355\u8bad\u7ec3\u79cd\u5b50\u7b5b\u9009\u4e2d\uff0c32\u548c64\u672a\u663e\u793a\u6574\u5c40\u5f97\u5206\u4f18\u4e8e128\u9ed8\u8ba4\uff1b256\u548c128\u65b0\u521d\u59cb\u5316\u7684\u6574\u5c40\u5f97\u5206\u66f4\u5dee\u3002\u4fdd\u7559128\u9ed8\u8ba4\u4f5c\u4e3a\u53c2\u7167\uff0c\u4e0d\u5ba3\u79f0\u5b83\u5728\u66f4\u957f\u8bad\u7ec3\u6216\u5176\u4ed6\u79cd\u5b50\u4e0b\u6700\u4f18\u3002",
+  "decision": "\u4e0d\u8ffd\u52a0\u8bad\u7ec3\uff1b\u672c\u8f6e\u65e0\u663e\u793a\u5f97\u5206\u4f18\u52bf\u7684\u65b0\u5019\u9009\uff0c\u6682\u4e0d\u6d88\u8017\u989d\u5916\u65b0\u79cd\u5b50\u9a8c\u8bc1\u3002GPU\u4efb\u52a1\u5df2\u81ea\u7136\u7ed3\u675f\uff0c\u5173\u95ed\u81ea\u52a8\u590d\u67e5\uff0c\u7b49\u5f85\u8ba8\u8bba\u4e0b\u4e00\u6b65\u3002",
+  "confirmation": "No additional candidate selected; seeds400050 onward remain unused. Existing50 seeds are tuning validation, not the final500 test.",
+  "limitations": "One training seed and only300 episodes; paired bootstrap intervals describe evaluation variation, not training-seed robustness. Repeated tuning and multiple comparisons limit generalization."
+}

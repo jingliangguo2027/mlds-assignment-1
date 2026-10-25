@@ -1,0 +1,97 @@
+"""Analytical gradient check, Pong preprocessing/actions, and paired gradient variance."""
+import itertools
+import json
+from pathlib import Path
+import numpy as np
+import torch
+from torch import nn
+from torch.distributions import Categorical
+from train import discounted_returns, make_env, make_policy, preprocess, rollout, update
+
+
+def exact_gradient_check():
+    # 两步小问题，可穷举四条轨迹：r0=1[a0=0]，r1=2*1[a1=1]。
+    # 理论目标 J = p(0) + gamma*2*p(1)，对它直接求导作为独立答案。
+    torch.manual_seed(2)
+    model = nn.Linear(1, 2, bias=False)
+    probabilities = model(torch.ones(1)).softmax(-1)
+    objective = probabilities[0] + 0.95 * 2 * probabilities[1]
+    exact = torch.autograd.grad(objective, model.weight)[0].detach()
+    p = probabilities.detach()
+    errors = {}
+    for baseline in (0.0, 0.8):
+        average = torch.zeros_like(exact)
+        for a0, a1 in itertools.product((0, 1), repeat=2):
+            rewards = [float(a0 == 0), 2.0 * (a1 == 1)]
+            optimizer = torch.optim.SGD(model.parameters(), lr=0.0)
+            update(model, optimizer, np.ones((2, 1), dtype=np.float32), [a0, a1],
+                   discounted_returns(rewards, 0.95), 0.95, baseline, "cpu")
+            # update 求的是负目标的梯度，因此反号后与理论目标比较。
+            average -= p[a0] * p[a1] * model.weight.grad
+        error = float((average-exact).abs().max())
+        assert error < 1e-6
+        errors[str(baseline)] = error
+    return errors
+
+
+def pong_checks():
+    image = np.full((210, 160, 3), 144, dtype=np.uint8)
+    image[35, 0, 0] = 109
+    image[37, 2, 0] = 255
+    original = image.copy()
+    reduced = preprocess(image)
+    assert reduced.shape == (80, 80) and reduced[0, 0] == 0 and reduced[1, 1] == 1
+    assert np.array_equal(image, original)
+    assert set(np.unique(reduced)) <= {0, 1}
+    policy = make_policy("pong")
+    env = make_env("pong")
+    torch.manual_seed(77)
+    first = rollout(env, policy, "pong", "cpu", 77)
+    torch.manual_seed(77)
+    second = rollout(env, policy, "pong", "cpu", 77)
+    env.close()
+    assert first[1] == second[1] and first[2] == second[2]
+    assert all(row["environment_action"] in (2, 3) for row in first[3])
+    assert first[2].count(-1.0) + first[2].count(1.0) > 0
+    return {"preprocessing_passed": True, "seeded_replay_identical": True,
+            "episode_score": sum(first[2]), "episode_steps": len(first[1]), "first_10_steps": first[3]}
+
+
+def gradient_variance():
+    # baseline 使用独立的 20 局估计，再用另 40 局成对比较；不使用测试局自身拟合 baseline。
+    torch.manual_seed(91)
+    policy = make_policy("cartpole")
+    env = make_env("cartpole")
+    baseline = 0.0
+    for episode in range(20):
+        _, _, rewards, _ = rollout(env, policy, "cartpole", "cpu", 5000+episode)
+        returns = discounted_returns(rewards, 0.95)
+        reference = float(np.average(returns, weights=0.95**np.arange(len(rewards))))
+        baseline = 0.9 * baseline + 0.1 * reference
+    samples = {"none": [], "historical_ema": []}
+    for episode in range(40):
+        states, actions, rewards, _ = rollout(env, policy, "cartpole", "cpu", 6000+episode)
+        returns = torch.tensor(discounted_returns(rewards, 0.95))
+        weights = 0.95 ** torch.arange(len(actions))
+        for name, b in (("none", 0.0), ("historical_ema", baseline)):
+            policy.zero_grad()
+            log_probs = Categorical(logits=policy(torch.tensor(states))).log_prob(torch.tensor(actions))
+            loss = -(weights * (returns-b) * log_probs).sum()
+            loss.backward()
+            samples[name].append(torch.cat([p.grad.flatten() for p in policy.parameters()]).detach().clone())
+    env.close()
+    variances = {name: float(torch.stack(rows).var(dim=0, unbiased=True).sum()) for name, rows in samples.items()}
+    return {"pilot_episodes": 20, "paired_episodes": 40, "baseline": baseline,
+            "sum_of_component_gradient_variances": variances,
+            "variance_ratio_ema_to_none": variances["historical_ema"]/variances["none"]}
+
+
+if __name__ == "__main__":
+    torch.set_num_threads(1)
+    output = Path(__file__).resolve().parent / "validation_results.json"
+    result = {"exact_gradient_max_errors": exact_gradient_check(),
+              "pong": pong_checks(), "gradient_variance": gradient_variance()}
+    output.write_text(json.dumps(result, indent=2)+"\n")
+    print(json.dumps({"exact_gradient_max_errors": result["exact_gradient_max_errors"],
+                      "pong_score": result["pong"]["episode_score"],
+                      "gradient_variance": result["gradient_variance"]}, indent=2))

@@ -1,0 +1,170 @@
+{
+  "status": "complete",
+  "episodes": 5000,
+  "validation_episodes": 50,
+  "final500_test": false,
+  "completed_utc": "2026-10-25T20:15:55.078213+00:00",
+  "runs": [
+    {
+      "experiment": "width128_he_small",
+      "mean": -18.6,
+      "std": 2.4331050121192876,
+      "wins": 0,
+      "min": -21.0,
+      "max": -12.0,
+      "discounted_return": -0.3350685729458928,
+      "entropy": 0.22339439898729324,
+      "saturation": 0.4053125,
+      "training_last100": -18.42,
+      "baseline_final": 0.0,
+      "baseline_used_range": [
+        0.0,
+        0.0
+      ],
+      "update_last100": {
+        "gradient_norm": 16.852212361097337,
+        "relative_parameter_delta": 0.0031713858124845173,
+        "probe_kl": 5.7513777874191875e-05
+      },
+      "fingerprint": "559ef2bdb8f947f16a279abe426b646190a474b9012d1c8e5f74b5d373f2fa4e",
+      "checkpoint_sha256": "31be6d55b733eacc2e6aca7e334e7fef50a622d5498390dd054d53da25c842e7"
+    },
+    {
+      "experiment": "width128_he_small_ema",
+      "mean": -18.42,
+      "std": 3.2624530647964884,
+      "wins": 0,
+      "min": -21.0,
+      "max": -6.0,
+      "discounted_return": -0.23528244853019714,
+      "entropy": 0.0942877184599638,
+      "saturation": 0.734296875,
+      "training_last100": -18.65,
+      "baseline_final": -0.221903512026022,
+      "baseline_used_range": [
+        -2.0019146154405836,
+        0.08740011668605081
+      ],
+      "update_last100": {
+        "gradient_norm": 8.559433001279832,
+        "relative_parameter_delta": 0.002303131395614682,
+        "probe_kl": 3.311252516141394e-05
+      },
+      "fingerprint": "bcf9f04786aa266c7905d087b571651d092e35d7825d4c36ee940976644966cd",
+      "checkpoint_sha256": "612fb0515827f6e1b2e1fe73b05982cf9c087333a1f9e3b7837856168ffd4895"
+    }
+  ],
+  "paired_baseline_minus_none": {
+    "mean": -18.42,
+    "paired_episodes": 50,
+    "discounted_gain": 0.09978612441569566,
+    "discounted_gain_95_interval": [
+      -0.013736205336637795,
+      0.21906116896681477
+    ],
+    "mean_discounted_return": -0.23528244853019714,
+    "paired_score_gain": 0.18,
+    "paired_bootstrap_95_interval": [
+      -0.76,
+      1.2004999999999926
+    ],
+    "clear_gain": false,
+    "mean_entropy_first256": 0.0942877184599638,
+    "mean_saturated_first256": 0.734296875
+  },
+  "training_windows": [
+    {
+      "start": 1,
+      "end": 500,
+      "means": [
+        -20.594,
+        -20.682
+      ]
+    },
+    {
+      "start": 501,
+      "end": 1000,
+      "means": [
+        -20.962,
+        -20.592
+      ]
+    },
+    {
+      "start": 1001,
+      "end": 1500,
+      "means": [
+        -20.87,
+        -20.186
+      ]
+    },
+    {
+      "start": 1501,
+      "end": 2000,
+      "means": [
+        -20.556,
+        -19.808
+      ]
+    },
+    {
+      "start": 2001,
+      "end": 2500,
+      "means": [
+        -20.722,
+        -19.364
+      ]
+    },
+    {
+      "start": 2501,
+      "end": 3000,
+      "means": [
+        -20.708,
+        -19.426
+      ]
+    },
+    {
+      "start": 3001,
+      "end": 3500,
+      "means": [
+        -20.158,
+        -18.72
+      ]
+    },
+    {
+      "start": 3501,
+      "end": 4000,
+      "means": [
+        -19.814,
+        -18.682
+      ]
+    },
+    {
+      "start": 4001,
+      "end": 4500,
+      "means": [
+        -19.512,
+        -18.772
+      ]
+    },
+    {
+      "start": 4501,
+      "end": 5000,
+      "means": [
+        -18.82,
+        -18.78
+      ]
+    }
+  ],
+  "initial_model_fingerprint": "580df2985ebec984527fe0780be850f036eaef40cd3571fd17f5a000c39c14e0",
+  "baseline_definition": "Use historical b, then b=0.9*b+0.1*time-weighted mean(G); initially0.",
+  "limitation": "Single training seed; repeated tuning seeds. Intervals cover validation variation, not training-seed uncertainty.",
+  "review": {
+    "time_utc": "2026-10-25T20:15:55.078213+00:00",
+    "stage": "EMA baseline\u4e0e\u65e0baseline\u76845000\u5c40\u5bf9\u7167\u5b8c\u6210",
+    "experiment": "width128_he_small_ema",
+    "episodes": 5000,
+    "result": "\u76f8\u540c50\u5c40\u51bb\u7ed3\u8c03\u53c2\u9a8c\u8bc1\uff1a\u65e0baseline\u5747\u5206-18.60\uff0cEMA\u5747\u5206-18.42\uff0c\u5dee+0.18\uff0c\u914d\u5bf995%\u533a\u95f4[-0.76,1.20]\u3002\u5f97\u5206\u6807\u51c6\u5dee\u5206\u522b2.43\u30013.26\uff0c\u4e24\u7ec4\u57470\u80dc\uff1b\u6298\u6263\u56de\u62a5\u5206\u522b-0.335\u3001-0.235\uff0c\u5dee+0.100\uff0c\u533a\u95f4[-0.014,0.219]\u3002",
+    "analysis": "EMA\u5728\u4e2d\u671f\u66f4\u65e9\u6539\u5584\uff1a2001\u20132500\u5c40\u5747\u5206-19.36\u5bf9-20.72\uff0c3001\u20133500\u5c40-18.72\u5bf9-20.16\uff1b4501\u20135000\u5c40\u5df2\u63a5\u8fd1\uff0c\u4e3a-18.78\u5bf9-18.82\u3002\u6700\u7ec8\u9a8c\u8bc1\u4e24\u9879\u5dee\u503c\u533a\u95f4\u90fd\u8de80\uff0c\u4e0d\u80fd\u786e\u8ba45000\u5c40\u7ec8\u70b9\u7684\u7a33\u5b9a\u4f18\u52bf\u3002EMA\u524d256\u6b65\u52a8\u4f5c\u71b50.094\u4f4e\u4e8e0.223\uff0c\u6982\u7387>99%\u7684\u6bd4\u4f8b73.43%\u9ad8\u4e8e40.53%\uff0c\u63a2\u7d22\u66f4\u5c11\u3002\u66f4\u65b0\u5e45\u5ea6\u66f4\u5c0f\u4e0d\u80fd\u5355\u72ec\u8bc1\u660e\u68af\u5ea6\u65b9\u5dee\u964d\u4f4e\uff1b\u7ed3\u679c\u4e5f\u4e0d\u80fd\u8bc1\u660ebaseline\u666e\u904d\u65e0\u6548\u3002",
+    "decision": "\u6309\u7528\u6237\u9884\u7b97\u5b8c\u6210\u4e24\u7ec4\u54045000\u5c40\uff1b\u4fdd\u5b58\u6a21\u578b\u3001Adam\u72b6\u6001\u3001\u65e5\u5fd7\u3001\u66f2\u7ebf\u4e0e\u5206\u6790\uff0c\u7ed3\u675f\u672c\u8f6eGPU\u4efb\u52a1\u548c\u590d\u67e5\uff0c\u4e0d\u81ea\u52a8\u8ffd\u52a0\u8bad\u7ec3\u6216\u66f4\u6539\u8bbe\u7f6e\u3002",
+    "reason": "\u56fa\u5b9a\u9884\u7b97\u5bf9\u7167\u5df2\u5b8c\u6210\u3002\u4e2d\u671f\u6539\u5584\u6ca1\u6709\u8f6c\u5316\u4e3a\u660e\u786e\u7684\u7ec8\u70b9\u5f97\u5206\u4f18\u52bf\uff1b\u672c\u6b21\u53ea\u6709\u4e00\u4e2a\u8bad\u7ec3\u79cd\u5b50\uff0c50\u5c40\u4e5f\u53cd\u590d\u7528\u4e8e\u8c03\u53c2\u3002\u7b49\u5f85\u7528\u6237\u8ba8\u8bba\u540e\u7eed\uff0c\u6b63\u5f0f\u72ec\u7acb500\u5c40\u6d4b\u8bd5\u4ecd\u672a\u8fd0\u884c\u3002"
+  }
+}

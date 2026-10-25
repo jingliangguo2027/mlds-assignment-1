@@ -1,0 +1,122 @@
+[
+  {
+    "step": 0,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.4594055712223053,
+      0.5405943989753723
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 1,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.4769115149974823,
+      0.5230885148048401
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 2,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.4926595091819763,
+      0.5073405504226685
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 3,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.5098673105239868,
+      0.49013271927833557
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 4,
+    "network_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "probabilities": [
+      0.5274159908294678,
+      0.4725840389728546
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 5,
+    "network_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "probabilities": [
+      0.510627031326294,
+      0.4893730580806732
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 6,
+    "network_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "probabilities": [
+      0.49236780405044556,
+      0.5076321363449097
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 7,
+    "network_action": 1,
+    "environment_action": 1,
+    "reward": 1.0,
+    "probabilities": [
+      0.47615814208984375,
+      0.5238418579101562
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 8,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.45799770951271057,
+      0.542002260684967
+    ],
+    "terminated": false,
+    "truncated": false
+  },
+  {
+    "step": 9,
+    "network_action": 0,
+    "environment_action": 0,
+    "reward": 1.0,
+    "probabilities": [
+      0.4774664044380188,
+      0.5225335359573364
+    ],
+    "terminated": false,
+    "truncated": false
+  }
+]

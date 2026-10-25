@@ -1,0 +1,16 @@
+{
+  "analytical_gradient_error": {
+    "0.0": 8.940696716308594e-08,
+    "0.8": 1.4901161193847656e-08
+  },
+  "batch_gradient_error": 0.0,
+  "learning_rate_fork_check": {
+    "source": "lr_001/checkpoint_300.pt",
+    "new_lr": 0.0003,
+    "identical_model_parameters": true,
+    "identical_adam_moments": true,
+    "identical_history": true,
+    "source_unmodified": true,
+    "existing_destination_rejected": true
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "checkpoint_fingerprint_verified": true,
+  "own_initial_score": -20.56,
+  "own_initial_discounted_return": -1.367506901025772,
+  "training_100_episode_means": [
+    -20.62,
+    -20.57,
+    -20.7
+  ],
+  "gradient_norm_mean": 18.107228801250457,
+  "relative_update_mean": 0.009705716901639728,
+  "relative_update_max": 0.022532934400350927
+}

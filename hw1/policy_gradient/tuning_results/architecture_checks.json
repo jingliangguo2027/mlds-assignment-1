@@ -1,0 +1,64 @@
+{
+  "default_128_matches_legacy": true,
+  "original_objective_gradient_error": {
+    "0.0": 8.940696716308594e-08,
+    "0.8": 1.4901161193847656e-08
+  },
+  "batch_gradient_error": 0.0,
+  "architectures": [
+    {
+      "hidden": 32,
+      "initialization": "default",
+      "initial_max_probability_deviation": 0.038790762424468994,
+      "finite_nonzero_gradients": true,
+      "checkpoint_roundtrip": true
+    },
+    {
+      "hidden": 64,
+      "initialization": "default",
+      "initial_max_probability_deviation": 0.048291146755218506,
+      "finite_nonzero_gradients": true,
+      "checkpoint_roundtrip": true
+    },
+    {
+      "hidden": 128,
+      "initialization": "default",
+      "initial_max_probability_deviation": 0.03061819076538086,
+      "finite_nonzero_gradients": true,
+      "checkpoint_roundtrip": true
+    },
+    {
+      "hidden": 256,
+      "initialization": "default",
+      "initial_max_probability_deviation": 0.026793837547302246,
+      "finite_nonzero_gradients": true,
+      "checkpoint_roundtrip": true
+    },
+    {
+      "hidden": 128,
+      "initialization": "he_small_output",
+      "initial_max_probability_deviation": 0.0008414387702941895,
+      "finite_nonzero_gradients": true,
+      "checkpoint_roundtrip": true
+    }
+  ],
+  "remote_pong_smoke": {
+    "gpu": "CUDA_VISIBLE_DEVICES=0",
+    "real_pong_updates": 3,
+    "trained_modes": [
+      [
+        256,
+        "default"
+      ],
+      [
+        128,
+        "he_small_output"
+      ]
+    ],
+    "same_config_resume": "passed; Adam step=2",
+    "changed_hidden_or_initialization_resume": "rejected",
+    "outer_discount": true,
+    "scope": "smoke only, not experimental results"
+  },
+  "generic_training_cli": "Custom hidden=16, He-small initialization, CPU CartPole 1\u21922 episode continuation passed"
+}

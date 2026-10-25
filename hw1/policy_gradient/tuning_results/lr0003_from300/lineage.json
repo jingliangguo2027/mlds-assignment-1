@@ -1,0 +1,10 @@
+{
+  "source_checkpoint": "tuning_results/lr_001/checkpoint_300.pt",
+  "source_experiment": "lr_001",
+  "source_sha256": "14a631918f56ad7fdbd2743abcb7595ba9f43897f23b0b2587befa5368233f66",
+  "episodes_at_fork": 300,
+  "previous_lr": 0.001,
+  "new_lr": 0.0003,
+  "optimizer_moments_preserved": true,
+  "created_utc": "2026-10-24T18:12:55.026770+00:00"
+}

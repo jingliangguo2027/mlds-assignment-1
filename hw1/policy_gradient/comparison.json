@@ -1,0 +1,30 @@
+{
+  "complete": true,
+  "pending": [],
+  "experiments": {
+    "cartpole_none": {
+      "test_mean": 123.094,
+      "test_std": 36.23039006138355,
+      "training_episodes": 2000,
+      "test_episodes": 500
+    },
+    "cartpole_ema": {
+      "test_mean": 369.722,
+      "test_std": 65.63057759916485,
+      "training_episodes": 2000,
+      "test_episodes": 500
+    },
+    "pong_none": {
+      "test_mean": -18.374,
+      "test_std": 2.742649084370802,
+      "training_episodes": 5000,
+      "test_episodes": 500
+    },
+    "pong_ema": {
+      "test_mean": -18.786,
+      "test_std": 2.7092810854542204,
+      "training_episodes": 5000,
+      "test_episodes": 500
+    }
+  }
+}

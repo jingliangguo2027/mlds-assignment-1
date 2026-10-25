@@ -1,0 +1,31 @@
+{
+  "verified_utc": "2026-10-25T21:12:43.637267+00:00",
+  "models": {
+    "none": {
+      "experiment": "width128_he_small",
+      "model_id": "559ef2bdb8f947f16a279abe426b646190a474b9012d1c8e5f74b5d373f2fa4e",
+      "checkpoint_sha256": "31be6d55b733eacc2e6aca7e334e7fef50a622d5498390dd054d53da25c842e7"
+    },
+    "ema": {
+      "experiment": "width128_he_small_ema",
+      "model_id": "bcf9f04786aa266c7905d087b571651d092e35d7825d4c36ee940976644966cd",
+      "checkpoint_sha256": "612fb0515827f6e1b2e1fe73b05982cf9c087333a1f9e3b7837856168ffd4895"
+    }
+  },
+  "episodes_per_model": 500,
+  "raw_scores_match_metrics": true,
+  "test_seed_range": [
+    1000000,
+    1000499
+  ],
+  "local_remote_source_sha_match": true,
+  "model_fingerprints_verified": true,
+  "process_exited": true,
+  "all_four_results_complete": true,
+  "figures_visually_checked": true,
+  "source_hashes": {
+    "evaluate_pong_final.py": "a890579962c39db9c2c4f937a9d628a4f8f2772a857035f18610688488342403",
+    "summarize.py": "0cad88039a582616916c6b07a5c1f32ac76b4bb04041eb5bf4f8ccfaf7006ede",
+    "train.py": "56c4ab4b14666dfbfeb0f32f73655329c908deaf7cb3ca159f11ce9edfc04954"
+  }
+}

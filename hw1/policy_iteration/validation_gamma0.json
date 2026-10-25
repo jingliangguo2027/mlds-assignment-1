@@ -1,0 +1,10 @@
+{
+  "experiment": "zero_discount",
+  "gamma": 0.0,
+  "initial_policy": "dispatch at every state",
+  "expected_policy": "wait at every state",
+  "correct_actions": 201,
+  "total_states": 201,
+  "max_value_error": 0.0,
+  "passed": true
+}
