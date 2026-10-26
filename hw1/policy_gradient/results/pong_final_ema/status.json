@@ -1,7 +1,0 @@
-{
-  "status": "complete",
-  "model_id": "bcf9f04786aa266c7905d087b571651d092e35d7825d4c36ee940976644966cd",
-  "training_episodes": 5000,
-  "test_episodes": 500,
-  "completed_utc": "2026-10-25T21:11:23.398787+00:00"
-}

@@ -86,12 +86,69 @@ def gradient_variance():
             "variance_ratio_ema_to_none": variances["historical_ema"]/variances["none"]}
 
 
-if __name__ == "__main__":
+def pong_variance(device):
+    torch.manual_seed(0)
+    policy = make_policy('pong').to(device)
+    env = make_env('pong')
+    baseline = 0.0
+    for seed in range(300000, 300020):
+        torch.manual_seed(seed)
+        _, _, rewards, _ = rollout(env, policy, 'pong', device, seed)
+        returns = discounted_returns(rewards, .99)
+        baseline = .9 * baseline + .1 * float(np.average(returns, weights=.99**np.arange(len(returns))))
+    samples = {'none': [], 'ema': []}
+    for seed in range(310000, 310020):
+        torch.manual_seed(seed)
+        states, actions, rewards, _ = rollout(env, policy, 'pong', device, seed)
+        for name, b in [('none', 0), ('ema', baseline)]:
+            update(policy, torch.optim.SGD(policy.parameters(), lr=0), states, actions,
+                   discounted_returns(rewards, .99), .99, b, device)
+            samples[name].append(torch.cat([p.grad.flatten() for p in policy.parameters()]).detach().cpu())
+    env.close()
+    variances = {name: float(torch.stack(rows).var(0, unbiased=True).sum()) for name, rows in samples.items()}
+    return dict(baseline=baseline, variances=variances, ratio=variances['ema']/variances['none'])
+
+
+def chunk_check(device):
+    torch.manual_seed(0)
+    policy = make_policy('pong').to(device)
+    env = make_env('pong')
+    torch.manual_seed(123)
+    states, actions, rewards, _ = rollout(env, policy, 'pong', device, 123)
+    env.close()
+    returns = discounted_returns(rewards, .99)
+    update(policy, torch.optim.SGD(policy.parameters(), lr=0), states, actions, returns, .99, 0, device)
+    chunked = torch.cat([p.grad.flatten() for p in policy.parameters()]).clone()
+    policy.zero_grad()
+    x = torch.tensor(states, dtype=torch.float32, device=device)
+    a = torch.tensor(actions, device=device)
+    weights = torch.tensor(returns, device=device) * .99**torch.arange(len(actions), device=device)
+    loss = -(Categorical(logits=policy(x)).log_prob(a) * weights).sum()
+    loss.backward()
+    full = torch.cat([p.grad.flatten() for p in policy.parameters()])
+    error = float((chunked-full).norm()/full.norm())
+    assert error < 1e-4
+    with torch.no_grad():
+        for p in policy.parameters():
+            p -= 1e-5*p.grad/full.norm()
+        after = float(-(Categorical(logits=policy(x)).log_prob(a)*weights).sum())
+    assert after < float(loss.detach())
+    return dict(relative_error=error, loss_before=float(loss.detach()), loss_after=after)
+
+
+if __name__ == '__main__':
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--extra', choices=['pong-variance', 'chunk'])
+    parser.add_argument('--device', choices=['cpu', 'cuda'], default='cpu')
+    args = parser.parse_args()
+    if args.device == 'cuda':
+        assert torch.cuda.is_available() and torch.cuda.device_count() == 1
     torch.set_num_threads(1)
-    output = Path(__file__).resolve().parent / "validation_results.json"
-    result = {"exact_gradient_max_errors": exact_gradient_check(),
-              "pong": pong_checks(), "gradient_variance": gradient_variance()}
-    output.write_text(json.dumps(result, indent=2)+"\n")
-    print(json.dumps({"exact_gradient_max_errors": result["exact_gradient_max_errors"],
-                      "pong_score": result["pong"]["episode_score"],
-                      "gradient_variance": result["gradient_variance"]}, indent=2))
+    if args.extra:
+        result = pong_variance(args.device) if args.extra == 'pong-variance' else chunk_check(args.device)
+    else:
+        result = {'exact_gradient_max_errors': exact_gradient_check(),
+                  'pong': pong_checks(), 'gradient_variance': gradient_variance()}
+    # Print new results; never overwrite the submitted evidence.
+    print(json.dumps(result, indent=2))

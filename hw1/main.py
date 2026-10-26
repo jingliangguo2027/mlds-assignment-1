@@ -2,7 +2,6 @@ MAX_PEOPLE = 200
 
 states = list(range(MAX_PEOPLE + 1))
 
-# 0: do not dispatch; 1: dispatch one shuttle
 actions = [0, 1]
 K = 15 
 
@@ -17,7 +16,6 @@ def remaining_people(s, a):
     if a == 1:
         return max(s - K,0)
 
-
 def cost(s,a):
     return 100 * a + remaining_people(s,a) * 2
 
@@ -25,16 +23,8 @@ def preCost(s,t):
     totalCost = 0
     for k in range(1,6):
         next_s = min(MAX_PEOPLE, s + k)
-        totalCost += V[t+1][next_s][1] #这里我不知道对不对，就是用一个pair保存，【0】是行为【1】是cost
+        totalCost += V[t+1][next_s][1]
     return totalCost / 5
-
-
-
-         
-
-
-
-
 
 for t in range(T - 1, -1, -1):
     for s in range(MAX_PEOPLE + 1):
@@ -44,7 +34,6 @@ for t in range(T - 1, -1, -1):
             V[t][s] = [1,cost1]
         else:
             V[t][s] = [0,cost0]
-
 
 if __name__ == "__main__":
     from pathlib import Path
@@ -69,8 +58,4 @@ if __name__ == "__main__":
     fig.savefig(output_path, dpi=300)
     plt.close(fig)
     print(f"Saved plot: {output_path}")
-
-
-
-
 

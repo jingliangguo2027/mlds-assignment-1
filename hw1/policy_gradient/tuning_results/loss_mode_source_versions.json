@@ -1,8 +1,0 @@
-{
-  "original_train_sha256": "00e1a850770e53c3c984338e2a135bd54cb7337f2d82fb7c73d9c31d9acecd11",
-  "updated_train_sha256": "b9cbbc682fbe04d7d4fd824367f9a8170f019f2c4857a797514f4c599f4b5fc1",
-  "new_experiment": "no_outer_lr001",
-  "omit_time_discount": true,
-  "gamma_inside_returns": 0.99,
-  "learning_rate": 0.001
-}

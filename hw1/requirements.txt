@@ -1,1 +1,6 @@
-matplotlib==3.11.2
+numpy
+matplotlib
+gymnasium==1.4.0
+ale-py==0.12.1
+reportlab
+# Install torch separately for your CPU/CUDA setup.

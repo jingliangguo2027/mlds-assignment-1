@@ -1,29 +1,58 @@
-# Assignment 1 code
+# assignment1
 
-All assignment code, outputs and reference PDFs are kept here. Original learning versions are retained.
+Jingliang Guo · NetID: nxt1510
 
-## Shuttle dispatching
+## Where to start
 
-- `main.py`: finite horizon T=500, backward dynamic programming; `finite_horizon_value.png`.
-- `value_iteration.py`: infinite-horizon value iteration; `value_iteration_value.png`.
-- `policy_iteration/main.py`: policy evaluation/improvement; `policy_iteration/optimal_policy.png`.
-- `policy_iteration/validate.py`: zero-discount experiment, analytical boundary checks and three-algorithm comparison. Use `--experiment all`.
+| File | Purpose |
+|---|---|
+| `main.py` | Finite-horizon shuttle solution, T=500 |
+| `value_iteration.py` | Infinite-horizon shuttle value iteration |
+| `policy_iteration/main.py` | Shuttle policy iteration |
+| `policy_gradient/train.py` | CartPole and Pong REINFORCE, with optional EMA baseline |
+| `policy_iteration/validate.py` | Shuttle analytic and algorithm checks |
+| `policy_gradient/validate.py` | Gradient, replay and variance checks |
+| `policy_gradient/results/` | Four final experiments: scores/settings and required plots |
+| `policy_gradient/evidence.json` | Saved validation and selected tuning evidence |
+| `build_report.py` | Verify recorded score summaries and rebuild the report |
 
-Model: observe waiting passengers, choose whether to dispatch, charge dispatch plus remaining-passenger waiting cost, then add independent uniform arrivals 1–5. State range 0–200. Dispatch capacity 15, dispatch cost 100, waiting cost 2, gamma=0.95. Excess arrivals above 200 are excluded from the queue, a stated modeling assumption. The finite-horizon terminal cost is zero.
+## Setup and shuttle
 
-## Policy gradient
+Install PyTorch for your CPU/CUDA setup, then run from `hw1`:
 
-- `cartpole/train.py`: the original annotated teaching implementation; paired with `cartpole/逐行讲解.md`.
-- `policy_gradient/`: complete CartPole/Pong runner with no-baseline and historical EMA variants, single-GPU launcher, validations, resume tests and result summarizer.
+```sh
+python -m pip install -r requirements.txt
+python main.py
+python value_iteration.py
+python policy_iteration/main.py
+python policy_iteration/validate.py --experiment all
+```
 
-Read `policy_gradient/README.md` for setup and exact commands. PyTorch on Deepdish follows the Lab CUDA 12.6 installation command; the code records actual versions. Do not upload `.venv/`, passwords, SSH private keys or GitHub tokens.
+## Games
 
-`package_code.py` produces `hw1_code.zip`, a small code/documentation bundle for uploading to the cluster. Local environments, results and partially trained models are excluded. Run fresh experiments on the server, then resume only that server's own checkpoints.
+Run each command twice, replacing `BASELINE` with `none` and `ema`. Use new output folders so submitted results stay unchanged.
 
-## Completed report and results
+```sh
+cd policy_gradient
+python train.py --game cartpole --baseline BASELINE --episodes 2000 --eval-episodes 500 --lr 0.01 --output new_cartpole_BASELINE
+CUDA_VISIBLE_DEVICES=0 python train.py --game pong --baseline BASELINE --episodes 5000 --eval-episodes 500 --lr 0.001 --hidden 128 --initialization he_small_output --device cuda --output new_pong_BASELINE
+```
 
-The final report is `output/pdf/assignment1_report.pdf`. It includes all required plots, correctness and boundary checks, run commands, and the three-month validation discussion. Rebuild it with `python build_report.py` after installing ReportLab.
+The loss is `-sum(gamma**t * (G_t - b) * log_prob)`. Gamma is 0.95 for CartPole and 0.99 for Pong. Pong uses only actions 2/3, frame differences and the v5 environment defaults. The EMA baseline is updated after the policy, using preceding episodes when applied. Training uses one Adam step per episode.
 
-Repository: https://github.com/jingliangguo2027/mlds-assignment-1 (private). The instructor needs access before submission. Nothing has been submitted to Canvas.
+Checkpoints are saved every 10 episodes. Add `--resume` with the same settings to continue a checkpoint created by this simplified runner. Evaluation reruns from the fixed test seeds. Historical checkpoints have a different format; use the historical code to load those.
 
-All four frozen-policy tests contain 500 episodes. CartPole trained for 2000 episodes per setting; the selected Pong runs trained for 5000. `policy_gradient/report_results.md` contains the final summary. Tuning runs remain separate from the final tests. Large model files and local environments are not included in Git; recorded scores and model hashes are included.
+## Validation and report
+
+```sh
+# From policy_gradient
+python validate.py
+CUDA_VISIBLE_DEVICES=0 python validate.py --extra pong-variance --device cuda
+CUDA_VISIBLE_DEVICES=0 python validate.py --extra chunk --device cuda
+# From hw1
+python build_report.py
+```
+
+The default checks compare REINFORCE with an exact gradient, replay a seeded Pong trajectory, verify image processing, and measure paired CartPole gradient variance. Extra modes reproduce the Pong variance diagnostic and compare chunked/full gradients plus a descent step. They print new results rather than overwrite the submitted evidence.
+
+All four saved final tests contain 500 games. These runs use one training seed; neither Pong model wins a final test game. Original tuning and validation scripts remain in [commit e8ec206](https://github.com/jingliangguo2027/mlds-assignment-1/tree/e8ec206580c0c26dac98153dbd1bf1438fd36f4b/hw1). Historical scripts are not needed for the current main workflow. The original scores are preserved; cleanup does not represent new training.

@@ -1,6 +1,0 @@
-{
-  "updated_utc": "2026-10-24T21:56:51.783680+00:00",
-  "file": "staged_report.py",
-  "sha256": "7d59c702cdb3992fc659bf85a52abfa643cce0160aca7db30ff8912b3d54dc15",
-  "change": "Report only:5000-episode conclusion and dedicated raw/MA100 training curves; training code unchanged."
-}
