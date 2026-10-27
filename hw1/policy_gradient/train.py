@@ -1,4 +1,4 @@
-"""REINFORCE for CartPole-v1 and ALE/Pong-v5, with optional historical EMA baseline."""
+"""REINFORCE for CartPole-v1 and ALE/Pong-v5 with an optional EMA baseline."""
 import argparse
 import hashlib
 import json
@@ -12,7 +12,6 @@ from torch.distributions import Categorical
 
 
 def preprocess(image):
-    """作业提供的预处理；copy 避免意外修改环境的原始图像。"""
     image = image[35:195:2, ::2, 0].copy()
     image[(image == 144) | (image == 109)] = 0
     image[image != 0] = 1
@@ -23,25 +22,24 @@ def make_env(game):
     if game == "pong":
         import ale_py
         gym.register_envs(ale_py)
-        # 保留 v5 的默认 frameskip=4 和 sticky action probability=0.25。
+
         env = gym.make("ALE/Pong-v5")
         assert env.unwrapped.get_action_meanings()[2:4] == ["RIGHT", "LEFT"]
         return env
     return gym.make("CartPole-v1")
 
 
-def make_policy(game, hidden=None, initialization="default"):
+def make_policy(game, hidden=None, initialization="default", output_gain=0.01):
     inputs, default_hidden = (6400, 128) if game == "pong" else (4, 32)
     hidden = default_hidden if hidden is None else hidden
     if hidden < 1:
         raise ValueError("hidden must be positive")
-    # Categorical(logits=...) 内部完成概率归一化，log 概率计算更稳定。
+
     policy = nn.Sequential(nn.Linear(inputs, hidden), nn.ReLU(), nn.Linear(hidden, 2))
     if initialization == "he_small_output":
-        # ReLU 隐藏层使用 He 正态分布；小输出权重让初始动作概率接近各一半。
         nn.init.kaiming_normal_(policy[0].weight, nonlinearity="relu")
         nn.init.zeros_(policy[0].bias)
-        nn.init.orthogonal_(policy[2].weight, gain=0.01)
+        nn.init.orthogonal_(policy[2].weight, gain=output_gain)
         nn.init.zeros_(policy[2].bias)
     elif initialization != "default":
         raise ValueError("Unknown initialization")
@@ -53,7 +51,7 @@ def rollout(env, policy, game, device, seed):
     states, actions, rewards = [], [], []
     previous = np.zeros((80, 80), dtype=np.float32)
     trace = []
-    with torch.no_grad():  # 先收集经历，一局结束后再重新前向计算梯度。
+    with torch.no_grad():
         while True:
             if game == "pong":
                 current = preprocess(observation)
@@ -92,7 +90,7 @@ def update(policy, optimizer, states, actions, returns, gamma, baseline, device)
     advantages = torch.as_tensor(returns - baseline, device=device)
     weights = gamma ** torch.arange(len(actions), dtype=torch.float32, device=device)
     loss_value = 0.0
-    # Pong 一局可能很长，分块反向传播；全部块完成后只更新一次参数。
+
     for start in range(0, len(actions), 256):
         end = start + 256
         x = torch.as_tensor(states[start:end], dtype=torch.float32, device=device)
@@ -122,8 +120,6 @@ def policy_fingerprint(policy):
 
 
 def load_checkpoint(path):
-    # 兼容早期检查点里作为元数据保存的 TorchVersion 字符串子类。
-    # 仍使用受限的 weights_only 加载，不开放任意 Python 对象反序列化。
     with torch.serialization.safe_globals([torch.torch_version.TorchVersion]):
         return torch.load(path, map_location="cpu", weights_only=True)
 

@@ -1,4 +1,4 @@
-"""班车验证实验：零折扣、人数边界、三种算法结果对照。"""
+"""Analytic and cross-method checks for shuttle dispatch."""
 
 import argparse
 import json
@@ -13,13 +13,13 @@ def validate_zero_discount():
     model.GAMMA = 0.0
 
     try:
-        # 故意从错误策略开始：所有人数都发车。
+
         initial_policy = [1] * (model.MAX_PEOPLE + 1)
         values, _, _ = model.evaluate_policy(initial_policy)
         improved_policy = model.improve_policy(initial_policy, values)
         improved_values, _, _ = model.evaluate_policy(improved_policy)
 
-        # gamma=0 时，理论最优成本为 2*s，动作全部为 0。
+
         correct_actions = sum(improved_policy[s] == 0 for s in model.states)
         max_value_error = max(
             abs(improved_values[s] - 2 * s) for s in model.states
@@ -42,7 +42,6 @@ def validate_zero_discount():
 
 
 def validate_boundaries():
-    # 手算发车后的剩余人数和本轮成本，覆盖空站、不满一车、刚好一车和满站。
     cases = [
         (0, 0, 0, 0),
         (0, 1, 0, 100),
@@ -65,8 +64,8 @@ def validate_boundaries():
             "cost": actual_cost,
         })
 
-    # 用非线性的已知价值检查上限处的概率合并，而不只检查下标是否越界。
-    # 例如剩 198 人时，下一状态为 199、200、200、200、200。
+
+
     probe_values = [s * s for s in model.states]
     transition_cases = [
         (198, [199, 200, 200, 200, 200]),
@@ -85,9 +84,9 @@ def validate_boundaries():
             "actual_future_value": actual,
         })
 
-    # 再验证真实的长期成本。固定永不发车策略，满站后每轮均有 200 人。
+
     # V(200)=400/(1-gamma)；V(199)=398+gamma*V(200)。
-    # 从 198 人出发，下轮以 1/5 概率到 199，以 4/5 概率到 200。
+
     gamma = model.GAMMA
     exact_200 = 400 / (1 - gamma)
     exact_199 = 398 + gamma * exact_200
@@ -121,15 +120,13 @@ def validate_boundaries():
 
 
 def validate_algorithm_comparison():
-    # 重新运行三个算法，不读取以前保存的结果。
-    # run_path 默认不会执行文件中 __name__ == "__main__" 的画图部分。
     hw1_folder = Path(__file__).resolve().parent.parent
     finite = runpy.run_path(str(hw1_folder / "main.py"))
     vi = runpy.run_path(str(hw1_folder / "value_iteration.py"))
     pi_policy, pi_values, history = model.policy_iteration()
 
-    # 统一成两个数组：(所有人数的成本, 所有人数的动作)。
-    # 有限期只取第 0 轮，与无限期从相同人数出发的结果比较。
+
+
     results = {
         "finite_500": (
             [finite["V"][0][s][1] for s in model.states],
@@ -142,8 +139,8 @@ def validate_algorithm_comparison():
         "policy_iteration": (pi_values, pi_policy),
     }
 
-    # 两种无限期方法的停止精度不同，500 轮也有很小的截断误差。
-    # 因此成本允许 0.0001 的差异；本题这组参数下，动作预计完全一致。
+
+
     tolerance = 1e-4
     comparisons = []
     pairs = [
@@ -195,23 +192,23 @@ if __name__ == "__main__":
         output_path = Path(__file__).resolve().parent / f"validation_{name}.json"
         output_path.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
         if name == "gamma0":
-            print(f"零折扣：正确动作 {result['correct_actions']}/{result['total_states']}")
+            print(f"Zero discount: correct actions {result['correct_actions']}/{result['total_states']}")
         elif name == "boundaries":
-            print(f"人数边界：{len(result['one_step_checks'])} 个本轮成本检查通过")
-            print(f"上限处概率转移：{len(result['transition_checks'])} 个检查通过")
+            print(f"Boundary cases: {len(result['one_step_checks'])} cost checks passed")
+            print(f"Cap transitions: {len(result['transition_checks'])} checks passed")
             for row in result["long_run_checks"]:
                 print(
-                    f"永不发车，初始 {row['state']} 人："
-                    f"理论成本 {row['expected_value']:.8f}，"
-                    f"计算成本 {row['actual_value']:.8f}"
+                    f"Always wait, initial state {row['state']}: "
+                    f"expected cost {row['expected_value']:.8f}, "
+                    f"computed cost {row['actual_value']:.8f}"
                 )
         else:
             for row in result["comparisons"]:
                 print(
-                    f"{row['algorithm_a']} vs {row['algorithm_b']}："
-                    f"最大成本差 {row['max_cost_difference']:.9g}，"
-                    f"动作一致 {row['matching_actions']}/{result['states_checked']}"
+                    f"{row['algorithm_a']} vs {row['algorithm_b']}: "
+                    f"max value difference {row['max_cost_difference']:.9g}, "
+                    f"matching actions {row['matching_actions']}/{result['states_checked']}"
                 )
         if name != "comparison":
-            print(f"与理论成本的最大误差：{result['max_value_error']:.3e}")
-        print(f"验证通过，结果保存到：{output_path}")
+            print(f"Max analytic error: {result['max_value_error']:.3e}")
+        print(f"Passed; saved results: {output_path}")

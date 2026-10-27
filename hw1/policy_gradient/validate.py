@@ -10,8 +10,6 @@ from train import discounted_returns, make_env, make_policy, preprocess, rollout
 
 
 def exact_gradient_check():
-    # 两步小问题，可穷举四条轨迹：r0=1[a0=0]，r1=2*1[a1=1]。
-    # 理论目标 J = p(0) + gamma*2*p(1)，对它直接求导作为独立答案。
     torch.manual_seed(2)
     model = nn.Linear(1, 2, bias=False)
     probabilities = model(torch.ones(1)).softmax(-1)
@@ -26,7 +24,7 @@ def exact_gradient_check():
             optimizer = torch.optim.SGD(model.parameters(), lr=0.0)
             update(model, optimizer, np.ones((2, 1), dtype=np.float32), [a0, a1],
                    discounted_returns(rewards, 0.95), 0.95, baseline, "cpu")
-            # update 求的是负目标的梯度，因此反号后与理论目标比较。
+
             average -= p[a0] * p[a1] * model.weight.grad
         error = float((average-exact).abs().max())
         assert error < 1e-6
@@ -58,7 +56,6 @@ def pong_checks():
 
 
 def gradient_variance():
-    # baseline 使用独立的 20 局估计，再用另 40 局成对比较；不使用测试局自身拟合 baseline。
     torch.manual_seed(91)
     policy = make_policy("cartpole")
     env = make_env("cartpole")

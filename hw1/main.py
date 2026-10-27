@@ -3,7 +3,7 @@ MAX_PEOPLE = 200
 states = list(range(MAX_PEOPLE + 1))
 
 actions = [0, 1]
-K = 15 
+K = 15
 
 T=500
 

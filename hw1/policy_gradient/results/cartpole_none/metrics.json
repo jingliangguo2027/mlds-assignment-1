@@ -7,7 +7,7 @@
     "lr": 0.01,
     "seed": 0,
     "device": "cpu",
-    "output": "/Users/Admin/Documents/ChatGPT/\u5b66\u8fd8\u662f\u5f97\u4e0a\u554a/04-MLDS-490-IEMS-469/hw1/policy_gradient/results/cartpole_none",
+    "output": "results/cartpole_none",
     "resume": false,
     "gamma": 0.95,
     "environment": "CartPole-v1",

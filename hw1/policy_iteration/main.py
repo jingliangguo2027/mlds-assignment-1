@@ -1,4 +1,4 @@
-"""班车调度：先评估固定策略，再改进策略，直到动作不再改变。"""
+"""Policy iteration for the capped shuttle-dispatch model."""
 
 MAX_PEOPLE = 200
 K = 15
@@ -16,7 +16,6 @@ def cost(s, a):
     return 100 * a + 2 * remaining_people(s, a)
 
 def preCost(r, values):
-    """剩余 r 人之后，随机到达 1～5 人，对下一状态的价值取平均。"""
     totalCost = 0.0
     for k in range(1, 6):
         next_s = min(MAX_PEOPLE, r + k)
@@ -24,7 +23,6 @@ def preCost(r, values):
     return totalCost / 5
 
 def evaluate_policy(policy):
-    """第一步：固定 policy，反复更新到价值稳定；这里不选择动作。"""
     values = [0.0] * (MAX_PEOPLE + 1)
     evaluation_steps = 0
 
@@ -32,7 +30,7 @@ def evaluate_policy(policy):
         new_values = [0.0] * (MAX_PEOPLE + 1)
 
         for s in states:
-            a = policy[s]  # 动作已规定，直接服从，不比较 0 和 1。
+            a = policy[s]
             r = remaining_people(s, a)
             new_values[s] = cost(s, a) + GAMMA * preCost(r, values)
 
@@ -44,7 +42,6 @@ def evaluate_policy(policy):
             return values, evaluation_steps, delta
 
 def improve_policy(policy, values):
-    """第二步：查已经评估好的 values，为每种人数重新比较两个动作。"""
     new_policy = policy.copy()
 
     for s in states:
@@ -79,10 +76,10 @@ def policy_iteration():
             "old_policy_value_at_20": values[20],
         })
         print(
-            f"第 {iteration} 轮：评估更新 {evaluation_steps} 次；"
-            f"旧策略在 20 人时成本 {values[20]:.2f}；"
-            f"20 人时动作 {policy[20]} -> {new_policy[20]}；"
-            f"共修改 {changed_states} 个状态"
+            f"Iteration {iteration}: {evaluation_steps} evaluation sweeps; "
+            f"V(20)={values[20]:.2f}; "
+            f"action at 20: {policy[20]} -> {new_policy[20]}; "
+            f"{changed_states} states changed"
         )
 
         if changed_states == 0:
@@ -106,5 +103,5 @@ if __name__ == "__main__":
     results_path = output_folder / "results.json"
     results_path.write_text(json.dumps(results, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     image_path = plot_policy(states, policy, GAMMA, output_folder)
-    print(f"结果已保存：{results_path}")
-    print(f"策略图已保存：{image_path}")
+    print(f"Saved results: {results_path}")
+    print(f"Saved policy plot: {image_path}")

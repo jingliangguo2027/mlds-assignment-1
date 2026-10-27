@@ -1,5 +1,4 @@
-"""绘图放在单独文件，学习算法时只看 main.py 即可。"""
-
+"""Plot the dispatch policy."""
 from pathlib import Path
 
 
